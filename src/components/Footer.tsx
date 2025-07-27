@@ -18,14 +18,20 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center space-x-4 mb-6 md:mb-0">
-            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth">
-              <Linkedin className="h-5 w-5" />
+            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth" asChild>
+              <a href="https://www.linkedin.com/in/mikeeanthony/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth">
-              <Github className="h-5 w-5" />
+            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth" asChild>
+              <a href="https://github.com/manthony1" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth">
-              <Mail className="h-5 w-5" />
+            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth" asChild>
+              <a href="mailto:mike@mikeeanthony.com">
+                <Mail className="h-5 w-5" />
+              </a>
             </Button>
           </div>
 

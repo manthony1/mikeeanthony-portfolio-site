@@ -8,14 +8,14 @@ const LinksSection = () => {
       title: "LinkedIn Profile",
       description: "Connect with me professionally and view my complete work history",
       icon: <Linkedin className="h-6 w-6" />,
-      url: "#",
+      url: "https://www.linkedin.com/in/mikeeanthony/",
       category: "Professional"
     },
     {
       title: "GitHub Repository",
       description: "Explore my code projects and development work",
       icon: <Github className="h-6 w-6" />,
-      url: "#",
+      url: "https://github.com/manthony1",
       category: "Development"
     },
     {
@@ -55,25 +55,31 @@ const LinksSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {links.map((link, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-hover transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 cursor-pointer"
+            <a 
+              href={link.url} 
+              target={link.url.startsWith('mailto:') ? '_self' : '_blank'} 
+              rel={link.url.startsWith('mailto:') ? '' : 'noopener noreferrer'}
+              className="block"
             >
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div className="text-primary group-hover:text-accent transition-smooth">
-                    {link.icon}
+              <Card 
+                className="group hover:shadow-hover transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 cursor-pointer"
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div className="text-primary group-hover:text-accent transition-smooth">
+                      {link.icon}
+                    </div>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth" />
                   </div>
-                  <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth" />
-                </div>
-                <CardTitle className="text-lg group-hover:text-primary transition-smooth">
-                  {link.title}
-                </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground">
-                  {link.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+                  <CardTitle className="text-lg group-hover:text-primary transition-smooth">
+                    {link.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    {link.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </a>
           ))}
         </div>
 
