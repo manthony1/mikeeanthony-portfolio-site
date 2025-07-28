@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -43,9 +44,9 @@ const Footer = () => {
               Built with React & Tailwind CSS
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              <a href="/privacy" className="hover:text-primary transition-smooth">
+              <Link to="/privacy" className="hover:text-primary transition-smooth">
                 Privacy Policy
-              </a>
+              </Link>
             </p>
           </div>
         </div>
