@@ -9,6 +9,13 @@ const HeroSection = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const element = document.getElementById("links");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="about" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
       {/* Background gradient orbs */}
@@ -57,15 +64,30 @@ const HeroSection = () => {
             </Button>
             
             <div className="flex items-center gap-3">
-              <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="hover:shadow-hover transition-smooth"
+                onClick={scrollToContact}
+              >
                 <Mail className="h-4 w-4 mr-2" />
                 Contact
               </Button>
-              <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="hover:shadow-hover transition-smooth"
+                onClick={() => window.open('https://www.linkedin.com/in/mikeeanthony/', '_blank')}
+              >
                 <Linkedin className="h-4 w-4 mr-2" />
                 LinkedIn
               </Button>
-              <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="hover:shadow-hover transition-smooth"
+                onClick={() => window.open('https://github.com/manthony1', '_blank')}
+              >
                 <Github className="h-4 w-4 mr-2" />
                 GitHub
               </Button>
