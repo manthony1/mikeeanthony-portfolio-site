@@ -100,7 +100,7 @@ const ResumeSection = () => {
             onClick={() => {
               // Create a simple text-based resume for download
               const resumeContent = `Michael Anthony
-Austin, TX | mikeeanthony@gmail.com | (512) 962-2047
+Austin, TX | mikeeanthony@gmail.com
 PMP | MBA | Project & Program Management | ServiceNow | Workflow Automation | KPI Dashboards
 
 CERTIFICATIONS
