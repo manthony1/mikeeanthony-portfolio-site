@@ -25,6 +25,15 @@ const HeroSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="space-y-8">
           <div className="space-y-4">
+            <div className="flex justify-center mb-6">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-glow-primary">
+                <img 
+                  src="/lovable-uploads/028f791c-c045-4d42-bad9-39e47ec72585.png" 
+                  alt="Mike Anthony" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               Hi, I'm{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
