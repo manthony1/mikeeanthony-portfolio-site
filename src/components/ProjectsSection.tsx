@@ -6,10 +6,10 @@ import { ExternalLink, Github, Code2, Database, Globe } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "ServiceNow ITSM Implementation",
-      description: "Led end-to-end implementation of ServiceNow IT Service Management platform for enterprise client, improving incident resolution time by 40%.",
-      technologies: ["ServiceNow", "ITIL", "JavaScript", "REST APIs"],
-      category: "Project Management",
+      title: "Oracle SQL Portfolio",
+      description: "Built complex SQL queries aligned to 1Z0-171 using Oracle 23ai. Topics included joins, nested queries, views, and data conversions. Used DBeaver and Oracle SQL Developer for modeling and testing.",
+      technologies: ["Oracle SQL", "DBeaver", "Oracle SQL Developer", "1Z0-171"],
+      category: "Database Development",
       icon: <Database className="h-6 w-6" />,
       status: "Completed"
     },
