@@ -4,6 +4,7 @@ import pmpLogo from "@/assets/pmp-logo.png";
 import comptiaNetworkLogo from "@/assets/comptia-network-logo.png";
 import comptiaSecurityLogo from "@/assets/comptia-security-logo.png";
 import serviceNowLogo from "@/assets/servicenow-logo.png";
+import serviceNowLogoITSM from "@/assets/servicenow-logo-itsm.png";
 
 const CertificationsSection = () => {
   const certifications = [
@@ -13,7 +14,7 @@ const CertificationsSection = () => {
       logo: pmpLogo,
       status: "Certified",
       description: "Global standard for project management excellence, demonstrating proven experience and competency in leading teams and delivering results.",
-      year: "2023"
+      year: "2024"
     },
     {
       title: "CompTIA Network+",
@@ -21,31 +22,31 @@ const CertificationsSection = () => {
       logo: comptiaNetworkLogo,
       status: "Certified",
       description: "Validates networking knowledge and skills needed to troubleshoot, configure, and manage networks.",
-      year: "2022"
+      year: "2003"
     },
     {
       title: "CompTIA Security+",
       issuer: "CompTIA",
       logo: comptiaSecurityLogo,
-      status: "Certified", 
+      status: "Expired", 
       description: "Industry-leading cybersecurity certification covering essential security concepts and practices.",
-      year: "2022"
+      year: "2018"
     },
     {
       title: "ServiceNow CSA",
       issuer: "ServiceNow",
       logo: serviceNowLogo,
-      status: "Certified",
+      status: "In Progress",
       description: "ServiceNow Certified System Administrator - demonstrates platform administration and configuration expertise.",
-      year: "2023"
+      year: "2025"
     },
     {
       title: "ServiceNow CIS - ITSM",
       issuer: "ServiceNow",
-      logo: serviceNowLogo,
+      logo: serviceNowLogoITSM,
       status: "In Progress",
       description: "ServiceNow Certified Implementation Specialist for IT Service Management - advanced implementation expertise.",
-      year: "2024"
+      year: "2025"
     }
   ];
 
@@ -69,11 +70,11 @@ const CertificationsSection = () => {
             >
               <CardHeader className="text-center">
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-background rounded-lg flex items-center justify-center shadow-card">
+                  <div className="w-32 h-32 bg-background rounded-lg flex items-center justify-center shadow-card">
                     <img 
                       src={cert.logo} 
                       alt={`${cert.title} logo`}
-                      className="w-12 h-12 object-contain"
+                      className="w-28 h-28 object-contain"
                     />
                   </div>
                 </div>

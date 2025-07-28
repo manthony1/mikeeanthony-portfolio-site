@@ -4,12 +4,33 @@ import { Star, Quote } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "VP of Technology",
-      company: "Enterprise Solutions Corp",
-      content: "Mike's project management skills are exceptional. He led our ServiceNow implementation flawlessly, delivering on time and under budget. His technical background really sets him apart.",
+      name: "Isabel Londoño",
+      role: "VP of Operations",
+      company: "Sphere Partners",
+      content: "In a few short weeks I could feel the impact of his work. Mike understood the goals, developed actionable plans and executed quickly and expertly.",
       rating: 5
     },
+    {
+      name: "Peter de Rosa",
+      role: "VP of Operations",
+      company: "Cornerstone OnDemand",
+      content: "I really enjoyed working with Mike at Saba Software. During his time, he showed me that his strength was leading technical digital marketing projects that needed to be rolled out to global teams. Mike is a 'go-getter' and a great team mate.",
+      rating: 4
+    },
+    {
+      name: "Greg Latson",
+      role: "Director of Marketing",
+      company: "Saba Software",
+      content: "Mike was our go-to expert for building, integrating and analyzing our marketing reporting. Mike's attention to detail and the ability to grasp and integrate new and different MarTech have been a huge asset to our team. I'm confident that Mike can handle most any challenge presented.",
+      rating: 5
+    },
+    {
+      name: "Laura Fuller",
+      role: "Director of Sales",
+      company: "Lumesse",
+      content: "Mike really understands what needs to be done to achieve goals and will focus on results. I really enjoy working with him.",
+      rating: 5
+    },         
     {
       name: "David Chen",
       role: "IT Director",
