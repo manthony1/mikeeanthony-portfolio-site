@@ -42,6 +42,11 @@ const Footer = () => {
             <p className="text-xs text-muted-foreground mt-1">
               Built with React & Tailwind CSS
             </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              <a href="/privacy" className="hover:text-primary transition-smooth">
+                Privacy Policy
+              </a>
+            </p>
           </div>
         </div>
       </div>
