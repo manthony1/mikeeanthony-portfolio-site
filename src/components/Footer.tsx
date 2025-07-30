@@ -1,9 +1,13 @@
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github, Mail, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { useResumeDownload } from "@/hooks/useResumeDownload";
+import ResumeDownloadDialog from "@/components/ResumeDownloadDialog";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { isDialogOpen, setIsDialogOpen, showDownload, handleFormSubmit, downloadResume } = useResumeDownload();
 
   return (
     <footer className="py-12 border-t border-border/50 bg-card/30 backdrop-blur-sm">
@@ -43,11 +47,29 @@ const Footer = () => {
             <p className="text-xs text-muted-foreground mt-1">
               Built with React & Tailwind CSS
             </p>
-            <p className="text-xs text-muted-foreground mt-1">
-              <Link to="/privacy" className="hover:text-primary transition-smooth">
-                Privacy Policy
-              </Link>
-            </p>
+            <div className="flex flex-col space-y-1">
+              <p className="text-xs text-muted-foreground">
+                <Link to="/privacy" className="hover:text-primary transition-smooth">
+                  Privacy Policy
+                </Link>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-primary transition-smooth text-left">
+                      Download Resume
+                    </button>
+                  </DialogTrigger>
+                  <ResumeDownloadDialog
+                    isOpen={isDialogOpen}
+                    onOpenChange={setIsDialogOpen}
+                    showDownload={showDownload}
+                    onFormSubmit={handleFormSubmit}
+                    onDownload={downloadResume}
+                  />
+                </Dialog>
+              </p>
+            </div>
           </div>
         </div>
       </div>
