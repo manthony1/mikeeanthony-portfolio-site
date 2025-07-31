@@ -83,56 +83,6 @@ const LinksSection = () => {
           ))}
         </div>
 
-        {/* Contact Form */}
-        <div className="max-w-2xl mx-auto">
-          <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Quick Contact</CardTitle>
-              <CardDescription>
-                Send me a message and I'll get back to you as soon as possible
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-3 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    className="w-full px-3 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Subject</label>
-                <input 
-                  type="text" 
-                  className="w-full px-3 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
-                  placeholder="Project inquiry"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
-                <textarea 
-                  rows={4}
-                  className="w-full px-3 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-smooth resize-none"
-                  placeholder="Tell me about your project..."
-                ></textarea>
-              </div>
-              <Button size="lg" className="w-full bg-gradient-primary hover:shadow-glow-primary transition-smooth">
-                Send Message
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
