@@ -47,8 +47,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="space-y-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-6 shadow-card border border-border/50">
+          <div className="space-y-4 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-card border border-border/50">
               <p className="mb-4">
                 <span className="text-primary font-semibold">Project Management Professional (PMP)</span>
               </p>
