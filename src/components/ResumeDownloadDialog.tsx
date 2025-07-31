@@ -31,8 +31,8 @@ const ResumeDownloadDialog = ({
         
         {!showDownload ? (
           <form 
-            data-netlify="true"
             name="resume-download"
+            data-netlify="true"
             onSubmit={onFormSubmit}
             className="space-y-4"
           >
