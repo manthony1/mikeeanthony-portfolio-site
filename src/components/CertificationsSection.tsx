@@ -81,7 +81,13 @@ const CertificationsSection = () => {
                 <div className="flex items-center justify-between mb-2">
                   <Badge 
                     variant={cert.status === "Certified" ? "default" : "secondary"}
-                    className={cert.status === "Certified" ? "bg-gradient-primary" : ""}
+                    className={
+                      cert.status === "Certified" 
+                        ? "bg-gradient-primary" 
+                        : cert.status === "In Progress" 
+                        ? "bg-green-500 text-white hover:bg-green-600" 
+                        : ""
+                    }
                   >
                     {cert.status}
                   </Badge>
