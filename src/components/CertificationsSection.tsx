@@ -85,7 +85,7 @@ const CertificationsSection = () => {
                       cert.status === "Certified" 
                         ? "bg-gradient-primary" 
                         : cert.status === "In Progress" 
-                        ? "bg-green-500 text-white" 
+                        ? "bg-green-500 text-white hover:bg-green-500" 
                         : ""
                     }
                   >
