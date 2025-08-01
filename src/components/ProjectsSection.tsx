@@ -47,9 +47,9 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-hover transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50"
+              className="group hover:shadow-hover transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 flex flex-col h-full"
             >
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-primary">{project.icon}</div>
                   <Badge variant="secondary" className="text-xs">
@@ -62,26 +62,24 @@ const ProjectsSection = () => {
                 <CardDescription className="text-muted-foreground">
                   {project.description}
                 </CardDescription>
+                <div className="flex flex-wrap gap-2 pt-4">
+                  {project.technologies.map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="outline" className="text-xs">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
-                  </div>
+              <CardContent className="pt-0">
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View
+                  </Button>
+                  <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
+                    <Github className="h-4 w-4 mr-2" />
+                    Code
+                  </Button>
                 </div>
               </CardContent>
             </Card>
