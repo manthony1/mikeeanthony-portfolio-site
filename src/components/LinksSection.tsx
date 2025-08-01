@@ -85,6 +85,37 @@ const LinksSection = () => {
               );
             }
             
+            if (link.title === "Schedule a Meeting") {
+              return (
+                <div 
+                  key={index}
+                  className="block cursor-pointer"
+                  data-cal-link="mike-anthony/15min"
+                  data-cal-namespace="15min"
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'
+                >
+                  <Card 
+                    className="group hover:shadow-hover transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 cursor-pointer"
+                  >
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <div className="text-primary group-hover:text-accent transition-smooth">
+                          {link.icon}
+                        </div>
+                        <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth" />
+                      </div>
+                      <CardTitle className="text-lg group-hover:text-primary transition-smooth">
+                        {link.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-muted-foreground">
+                        {link.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </div>
+              );
+            }
+            
             return (
               <a 
                 key={index}
