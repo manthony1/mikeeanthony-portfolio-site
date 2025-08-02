@@ -7,8 +7,8 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Oracle SQL Portfolio",
-      description: "Built complex SQL queries aligned to 1Z0-171 using Oracle 23ai. Topics included joins, nested queries, views, and data conversions. Used DBeaver and Oracle SQL Developer for modeling and testing.",
-      technologies: ["Oracle SQL", "DBeaver", "Oracle SQL Developer", "1Z0-171"],
+      description: "Built complex SQL queries using Oracle 23ai. Topics included joins, nested queries, views, and data conversions.",
+      technologies: ["Oracle SQL", "DBeaver", "1Z0-171"],
       category: "Database Development",
       icon: <Database className="h-6 w-6" />,
       status: "Completed"
