@@ -4,9 +4,37 @@ export const useResumeDownload = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showDownload, setShowDownload] = useState(false);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setShowDownload(true);
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    // Convert FormData to URLSearchParams for Netlify
+    const params = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+      params.append(key, value.toString());
+    }
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+      
+      if (response.ok) {
+        setShowDownload(true);
+      } else {
+        console.error('Form submission failed:', response.status);
+        // Still show download on error for user experience
+        setShowDownload(true);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show download on error for user experience
+      setShowDownload(true);
+    }
   };
 
   const downloadResume = () => {
