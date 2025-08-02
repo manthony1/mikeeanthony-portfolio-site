@@ -2,10 +2,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Mail, Linkedin, Github, FileText, Calendar } from "lucide-react";
 import { useResumeDownload } from "@/hooks/useResumeDownload";
+import { useContactForm } from "@/hooks/useContactForm";
 import ResumeDownloadDialog from "@/components/ResumeDownloadDialog";
+import ContactFormDialog from "@/components/ContactFormDialog";
 
 const LinksSection = () => {
   const { isDialogOpen, setIsDialogOpen, showDownload, handleFormSubmit, downloadResume } = useResumeDownload();
+  const { isDialogOpen: isContactDialogOpen, setIsDialogOpen: setIsContactDialogOpen, showSuccess, handleFormSubmit: handleContactFormSubmit } = useContactForm();
   
   const links = [
     {
@@ -116,6 +119,32 @@ const LinksSection = () => {
               );
             }
             
+            if (link.title === "Email Contact") {
+              return (
+                <div key={index} className="block">
+                  <Card 
+                    className="group hover:shadow-hover transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 cursor-pointer"
+                    onClick={() => setIsContactDialogOpen(true)}
+                  >
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <div className="text-primary group-hover:text-accent transition-smooth">
+                          {link.icon}
+                        </div>
+                        <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth" />
+                      </div>
+                      <CardTitle className="text-lg group-hover:text-primary transition-smooth">
+                        {link.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-muted-foreground">
+                        {link.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </div>
+              );
+            }
+            
             return (
               <a 
                 key={index}
@@ -153,6 +182,13 @@ const LinksSection = () => {
           showDownload={showDownload}
           onFormSubmit={handleFormSubmit}
           onDownload={downloadResume}
+        />
+
+        <ContactFormDialog
+          isOpen={isContactDialogOpen}
+          onOpenChange={setIsContactDialogOpen}
+          showSuccess={showSuccess}
+          onFormSubmit={handleContactFormSubmit}
         />
 
       </div>
