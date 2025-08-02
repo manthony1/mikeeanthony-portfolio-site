@@ -10,21 +10,31 @@ export const useContactForm = () => {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     
+    // Convert FormData to URLSearchParams for Netlify
+    const params = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+      params.append(key, value.toString());
+    }
+    
     try {
-      await fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+        body: params.toString(),
       });
       
-      setShowSuccess(true);
-      
-      // Reset form and close dialog after 3 seconds
-      setTimeout(() => {
-        setShowSuccess(false);
-        setIsDialogOpen(false);
-        form.reset();
-      }, 3000);
+      if (response.ok) {
+        setShowSuccess(true);
+        
+        // Reset form and close dialog after 3 seconds
+        setTimeout(() => {
+          setShowSuccess(false);
+          setIsDialogOpen(false);
+          form.reset();
+        }, 3000);
+      } else {
+        console.error('Form submission failed:', response.status);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
     }
