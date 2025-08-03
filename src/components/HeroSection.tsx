@@ -41,7 +41,8 @@ const HeroSection = () => {
               </span>
             </h1>
             <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground space-y-4">
-              <p className="font-semibold text-foreground">Turning chaos into systems. I lead with process thinking, automation tools, and a bias for execution.</p>
+              <p className="font-semibold text-foreground">Turning chaos into systems.</p>
+              <p className="font-semibold text-foreground">I lead with process thinking, automation tools, and a bias for execution.</p>
               <p>Technical PM | AI Workflow Builder | Data-Driven Process Optimizer</p>
             </div>
           </div>
