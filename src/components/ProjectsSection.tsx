@@ -52,7 +52,10 @@ const ProjectsSection = () => {
               <CardHeader className="flex-grow">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-primary">{project.icon}</div>
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge 
+                    variant={project.status === "Completed" ? "default" : "secondary"}
+                    className={project.status === "Completed" ? "bg-gradient-primary text-xs" : "text-xs"}
+                  >
                     {project.status}
                   </Badge>
                 </div>
