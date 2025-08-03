@@ -78,10 +78,10 @@ const Navigation = () => {
           <div className="md:hidden">
             <Button
               variant="ghost"
-              size="sm"
+              size="default"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
             </Button>
           </div>
         </div>
