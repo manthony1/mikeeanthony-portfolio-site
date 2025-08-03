@@ -19,7 +19,7 @@ const ResumeSection = () => {
       achievements: [
         "Processed 460+ tax forms monthly, meeting strict federal standards",
         "Maintained system records in line with IRS regulations and privacy standards",
-        "Applied project-level tracking to streamline intake and throughput"
+        "Applied process optimization to streamline intake and throughput"
       ]
     },
     {
@@ -29,7 +29,7 @@ const ResumeSection = () => {
       location: "Remote",
       description: "Led large-scale platform integrations and coordinated cross-functional plans across multiple stakeholders.",
       achievements: [
-        "Led 3 large-scale platform integrations; improved efficiency by 25%, saving $100K",
+        "Led large-scale platform integrations; improved efficiency by 25%, saving $100K",
         "Coordinated cross-functional plans across 50+ stakeholders using ClickUp and Airtable",
         "Managed vendor deliverables and contracts, ensuring SLA compliance",
         "Created and maintained KPI dashboards for performance visibility"
@@ -85,7 +85,7 @@ const ResumeSection = () => {
   const skills = {
     "Project Management": ["PMP", "Agile 2.0", "Lean Six Sigma Green Belt", "SOPs", "KPI Dashboards"],
     "Technical": ["ServiceNow", "SQL", "PowerBI", "Oracle 23ai", "Python", "Flow Designer"],
-    "Process & Automation": ["ServiceNow Flow Designer", "n8n", "NLP (OpenAI)", "Workflow Automation"],
+    "Process & Automation": ["n8n", "NLP (OpenAI)", "Workflow Automation"],
     "Tools & Platforms": ["ClickUp", "Airtable", "Smartsheet", "Jira", "Google Workspace", "BigQuery"]
   };
 

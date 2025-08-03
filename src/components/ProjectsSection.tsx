@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       category: "Development",
       icon: <Globe className="h-6 w-6" />,
-      status: "In Progress"
+      status: "Completed"
     }
   ];
 
