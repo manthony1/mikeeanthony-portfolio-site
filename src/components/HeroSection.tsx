@@ -40,10 +40,9 @@ const HeroSection = () => {
                 Mike
               </span>
             </h1>
-            <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground space-y-2">
-              <p className="font-semibold text-foreground">Technical Project Manager</p>
-              <p>Process Improvement (Workflow) Analyst</p>
-              <p>Code & AI Proficient</p>
+            <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground space-y-4">
+              <p className="font-semibold text-foreground">Turning chaos into systems. I lead with process thinking, automation tools, and a bias for execution.</p>
+              <p>Technical PM | AI Workflow Builder | Data-Driven Process Optimizer</p>
             </div>
           </div>
 
