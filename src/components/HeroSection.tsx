@@ -62,7 +62,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-6">
             <Button 
               onClick={scrollToProjects}
               size="lg"
@@ -72,33 +72,26 @@ const HeroSection = () => {
               <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-smooth" />
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="hover:shadow-hover transition-smooth"
-              onClick={scrollToContact}
-            >
-              <Mail className="h-4 w-4 mr-2" />
-              Contact
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="hover:shadow-hover transition-smooth"
-              onClick={() => window.open('https://www.linkedin.com/in/mikeeanthony/', '_blank')}
-            >
-              <Linkedin className="h-4 w-4 mr-2" />
-              LinkedIn
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="hover:shadow-hover transition-smooth"
-              onClick={() => window.open('https://github.com/manthony1', '_blank')}
-            >
-              <Github className="h-4 w-4 mr-2" />
-              GitHub
-            </Button>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="hover:shadow-hover transition-smooth"
+                onClick={() => window.open('https://www.linkedin.com/in/mikeeanthony/', '_blank')}
+              >
+                <Linkedin className="h-4 w-4 mr-2" />
+                LinkedIn
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="hover:shadow-hover transition-smooth"
+                onClick={() => window.open('https://github.com/manthony1', '_blank')}
+              >
+                <Github className="h-4 w-4 mr-2" />
+                GitHub
+              </Button>
+            </div>
           </div>
         </div>
       </div>
