@@ -68,7 +68,7 @@ const HeroSection = () => {
               size="lg"
               className="group bg-gradient-primary hover:shadow-glow-primary transition-smooth"
             >
-              View My Work
+              Projects
               <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-smooth" />
             </Button>
             
