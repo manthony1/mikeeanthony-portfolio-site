@@ -42,7 +42,7 @@ const HeroSection = () => {
             </h1>
             <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground space-y-4">
               <p className="text-foreground"><span className="font-reenie text-4xl">Turning chaos into systems.</span></p>
-              <p className="font-semibold text-foreground">I lead with process thinking, automation tools, and a bias for execution.</p>
+              
               <p>AI Automation Consultant | Technical PM | Data-Driven Process Optimizer</p>
             </div>
           </div>
