@@ -43,7 +43,7 @@ const HeroSection = () => {
             <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground space-y-4">
               <p className="text-foreground"><span className="font-reenie text-4xl">Turning chaos into systems.</span></p>
               
-              <p className="text-base sm:text-lg lg:text-xl whitespace-nowrap">AI Automation Consultant | Technical PM | Data-Driven Process Optimizer</p>
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl">AI Automation Consultant | Technical PM | Data-Driven Process Optimizer</p>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ const HeroSection = () => {
               </Button>
             </div>
             
-            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-card border border-border/50">
+            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 shadow-card border border-border/50 mx-2 sm:mx-0">
               <p className="mb-4">
                 <span className="text-primary font-semibold">MBA - University of Redlands</span>
               </p>
