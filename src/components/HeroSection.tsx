@@ -43,7 +43,7 @@ const HeroSection = () => {
             <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground space-y-4">
               <p className="text-foreground"><span className="font-reenie text-4xl">Turning chaos into systems.</span></p>
               
-              <p>AI Automation Consultant | Technical PM | Data-Driven Process Optimizer</p>
+              <p className="text-base sm:text-lg lg:text-xl whitespace-nowrap">AI Automation Consultant | Technical PM | Data-Driven Process Optimizer</p>
             </div>
           </div>
 
