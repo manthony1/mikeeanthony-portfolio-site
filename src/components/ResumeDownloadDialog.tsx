@@ -28,13 +28,6 @@ const ResumeDownloadDialog = ({
             Please provide your information to download the resume.
           </DialogDescription>
         </DialogHeader>
-
-        <!-- Replace the variables below. -->
-        <script>
-          function onSubmit(token) {
-            document.getElementById("resume-download").submit();
-          }
-        </script>
         
         {!showDownload ? (
           <form 
@@ -85,7 +78,7 @@ const ResumeDownloadDialog = ({
         ) : (
           <div className="text-center space-y-4">
             <p className="text-muted-foreground">Thank you! Click below to download the resume.</p>
-            <Button onClick={onDownload} className="w-full g-recaptcha" data-sitekey="6LdR4porAAAAAIade5n-UDKtm81pxcUflsN1R6iz" data-callback='onSubmit' data-action='submit'>
+            <Button onClick={onDownload} className="w-full">
               <Download className="h-4 w-4 mr-2" />
               Download Resume
             </Button>
