@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navigation = () => {
     { id: "resume", label: "Resume" },
     { id: "certifications", label: "Certifications" },
     { id: "testimonials", label: "Testimonials" },
+    { id: "automation-vault", label: "Automation Vault", route: "/automation-vault" },
     { id: "links", label: "Links" },
   ];
 
