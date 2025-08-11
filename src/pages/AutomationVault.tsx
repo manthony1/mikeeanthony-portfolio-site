@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import Navigation from "@/components/Navigation";
 
 const AutomationVault = () => {
   useEffect(() => {
@@ -48,7 +49,9 @@ const AutomationVault = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-background">
       <header className="pt-24 pb-8 border-b border-border bg-gradient-to-b from-background to-background/80">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">Automation Vault</h1>
@@ -96,6 +99,7 @@ const AutomationVault = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 
