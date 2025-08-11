@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Top row - Credentials */}
         <div className="text-center mb-8">
           <p className="text-lg text-foreground">
-            MBA | PMP | Lean Six Sigma | <span className="font-reenie text-xl">Turning chaos into systems</span>
+            MBA | PMP | Lean Six Sigma
           </p>
         </div>
 
@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
           {/* Left column */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Mike Anthony
+            <h3 className="text-xl font-reenie" style={{ color: 'rgb(241, 242, 243)' }}>
+              Turning chaos into systems
             </h3>
           </div>
 
