@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
+  const location = useLocation();
 
   const sections = [
     { id: "about", label: "About" },
@@ -38,10 +39,18 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleSectionClick = (sectionId: string) => {
+    const isOnHomePage = location.pathname === "/";
+    
+    if (isOnHomePage) {
+      // If on home page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on another page, navigate to home page with hash
+      window.location.href = `/#${sectionId}`;
     }
     setIsOpen(false);
   };
@@ -77,7 +86,7 @@ const Navigation = () => {
                   <Button
                     key={section.id}
                     variant="ghost"
-                    onClick={() => scrollToSection(section.id)}
+                     onClick={() => handleSectionClick(section.id)}
                     className={`transition-smooth ${
                       activeSection === section.id
                         ? "text-primary"
@@ -127,7 +136,7 @@ const Navigation = () => {
                   <Button
                     key={section.id}
                     variant="ghost"
-                    onClick={() => scrollToSection(section.id)}
+                    onClick={() => handleSectionClick(section.id)}
                     className={`w-full justify-start transition-smooth ${
                       activeSection === section.id
                         ? "text-primary"
