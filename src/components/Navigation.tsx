@@ -60,18 +60,33 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {sections.map((section) => (
-                <Button
-                  key={section.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(section.id)}
-                  className={`transition-smooth ${
-                    activeSection === section.id
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {section.label}
-                </Button>
+                section.route ? (
+                  <Button
+                    key={section.id}
+                    variant="ghost"
+                    className={`transition-smooth ${
+                      activeSection === section.id
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    asChild
+                  >
+                    <Link to={section.route}>{section.label}</Link>
+                  </Button>
+                ) : (
+                  <Button
+                    key={section.id}
+                    variant="ghost"
+                    onClick={() => scrollToSection(section.id)}
+                    className={`transition-smooth ${
+                      activeSection === section.id
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {section.label}
+                  </Button>
+                )
               ))}
             </div>
           </div>
@@ -93,18 +108,35 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card rounded-lg mt-2 shadow-card">
               {sections.map((section) => (
-                <Button
-                  key={section.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(section.id)}
-                  className={`w-full justify-start transition-smooth ${
-                    activeSection === section.id
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {section.label}
-                </Button>
+                section.route ? (
+                  <Button
+                    key={section.id}
+                    variant="ghost"
+                    className={`w-full justify-start transition-smooth ${
+                      activeSection === section.id
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}
+                    asChild
+                  >
+                    <Link to={section.route} onClick={() => setIsOpen(false)}>
+                      {section.label}
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button
+                    key={section.id}
+                    variant="ghost"
+                    onClick={() => scrollToSection(section.id)}
+                    className={`w-full justify-start transition-smooth ${
+                      activeSection === section.id
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {section.label}
+                  </Button>
+                )
               ))}
             </div>
           </div>
