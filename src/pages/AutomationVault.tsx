@@ -73,7 +73,7 @@ const AutomationVault = () => {
               <CardDescription>n8n-powered workflow to analyze videos and generate content ideas.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-4 max-w-sm mx-auto">
+              <div className="mb-4 max-w-sm">
                 <AspectRatio ratio={16 / 9}>
                   <iframe
                     className="w-full h-full rounded-md border border-border"
