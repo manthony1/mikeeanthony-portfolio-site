@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
   const location = useLocation();
+  const navigate = useNavigate();
 
   const sections = [
     { id: "about", label: "About" },
@@ -49,8 +50,8 @@ const Navigation = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // If on another page, navigate to home page with hash
-      window.location.href = `/#${sectionId}`;
+      // If on another page, navigate to home page and then scroll to section
+      navigate("/", { state: { scrollTo: sectionId } });
     }
     setIsOpen(false);
   };
