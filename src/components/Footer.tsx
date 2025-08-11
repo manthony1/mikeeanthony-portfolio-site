@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
           {/* Left column */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-reenie" style={{ color: 'rgb(241, 242, 243)' }}>
+            <h3 className="text-2xl font-reenie" style={{ color: 'rgb(241, 242, 243)' }}>
               Turning chaos into systems
             </h3>
           </div>
