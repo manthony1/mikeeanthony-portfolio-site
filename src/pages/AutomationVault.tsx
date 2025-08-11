@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const AutomationVault = () => {
   useEffect(() => {
@@ -69,6 +70,19 @@ const AutomationVault = () => {
               <CardDescription>n8n-powered workflow to analyze videos and generate content ideas.</CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-4">
+                <AspectRatio ratio={16 / 9}>
+                  <iframe
+                    className="w-full h-full rounded-md border border-border"
+                    src="https://www.youtube.com/embed/YKyQnPxzOO4"
+                    title="YouTube Scraper walkthrough video"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </AspectRatio>
+              </div>
               <p className="text-muted-foreground">
                 Turn any high-performing YouTube video into a goldmine of new ideas—ready for execution.
               </p>
