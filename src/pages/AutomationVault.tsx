@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const AutomationVault = () => {
   useEffect(() => {
@@ -99,6 +100,7 @@ const AutomationVault = () => {
         </div>
       </section>
     </main>
+    <Footer />
     </>
   );
 };
