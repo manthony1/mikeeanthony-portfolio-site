@@ -1,9 +1,12 @@
 import { Linkedin, Github, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ContactFormDialog from "@/components/ContactFormDialog";
+import { useContactForm } from "@/hooks/useContactForm";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { isDialogOpen, setIsDialogOpen, showSuccess, handleFormSubmit } = useContactForm();
 
   return (
     <footer className="py-12 border-t border-border/50 bg-card/30 backdrop-blur-sm">
@@ -29,10 +32,13 @@ const Footer = () => {
                 <Github className="h-5 w-5" />
               </a>
             </Button>
-            <Button variant="ghost" size="sm" className="hover:text-primary transition-smooth" asChild>
-              <a href="mailto:mike@mikeeanthony.com">
-                <Mail className="h-5 w-5" />
-              </a>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="hover:text-primary transition-smooth" 
+              onClick={() => setIsDialogOpen(true)}
+            >
+              <Mail className="h-5 w-5" />
             </Button>
           </div>
 
@@ -53,6 +59,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      <ContactFormDialog
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        showSuccess={showSuccess}
+        onFormSubmit={handleFormSubmit}
+      />
     </footer>
   );
 };
