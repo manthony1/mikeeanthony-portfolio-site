@@ -69,26 +69,29 @@ const YouTubeScraper = () => {
             <iframe
               className="w-full h-full rounded-md border border-border"
               src="https://www.youtube.com/embed/YKyQnPxzOO4"
-              title="YouTube video player"
+              title="YouTube Scraper walkthrough video"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
           </AspectRatio>
+          <p className="mt-3 text-sm text-muted-foreground">Watch: YouTube Scraper walkthrough</p>
         </section>
 
         <section className="prose prose-sm sm:prose-base max-w-none dark:prose-invert">
-          <p>🔥 Automated Video Idea Generator Workflow</p>
+          <p className="text-lg font-semibold text-foreground">🔥 Automated Video Idea Generator Workflow</p>
           <p>
-            Grow your channel faster and boost engagement with far less effort. In this guide, I"ll walk you through a simple beginner-friendly automation you can build today.
+            Grow your channel faster and boost engagement with far less effort. In this guide, I’ll walk you through a simple beginner-friendly automation you can build today.
           </p>
           <p>
             💡 This n8n-powered workflow analyzes top-performing YouTube videos and turns them into a steady stream of actionable content ideas—so you can spend less time researching and more time creating.
           </p>
           <p>
-            It"s a complete, end-to-end system that extracts insights from successful videos, spots patterns that drive engagement, and generates fresh ideas tailored to your niche. Ideal for creators who want data-driven strategies without hours of manual digging.
+            It’s a complete, end-to-end system that extracts insights from successful videos, spots patterns that drive engagement, and generates fresh ideas tailored to your niche. Ideal for creators who want data-driven strategies without hours of manual digging.
           </p>
 
+          <hr className="my-8 border-border" />
           <h2>What This Workflow Does</h2>
           <ul>
             <li>✓ Pulls detailed YouTube video data automatically</li>
@@ -99,6 +102,7 @@ const YouTubeScraper = () => {
             <li>✓ Delivers polished, ready-to-use suggestions</li>
           </ul>
 
+          <hr className="my-8 border-border" />
           <h2>🛠️ Tools Used</h2>
           <ul>
             <li>✅ n8n – Workflow automation platform</li>
@@ -108,6 +112,7 @@ const YouTubeScraper = () => {
             <li>✅ Airtable – Data storage & organization</li>
           </ul>
 
+          <hr className="my-8 border-border" />
           <h2>Workflow Breakdown</h2>
 
           <h3>1. Manual Trigger & Video Input</h3>
@@ -156,7 +161,7 @@ const YouTubeScraper = () => {
           </ul>
 
           <p>
-            This workflow turns any high-performing YouTube video into a goldmine of new ideas—ready for execution. Just drop in a video ID and get instant, AI-powered inspiration based on what"s already working in your niche.
+            This workflow turns any high-performing YouTube video into a goldmine of new ideas—ready for execution. Just drop in a video ID and get instant, AI-powered inspiration based on what’s already working in your niche.
           </p>
         </section>
       </article>
