@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Top row - Credentials */}
         <div className="text-center mb-8">
           <p className="text-lg text-foreground">
-            MBA | PMP | Lean Six Sigma | Proven Ops & Automation Results
+            MBA | PMP | Lean Six Sigma | <span className="font-reenie text-xl">Turning chaos into systems</span>
           </p>
         </div>
 
