@@ -18,4 +18,4 @@ If you can read this, Markdown loading works.
 
 `inline code` and a **bold** check.
 
-[<--Back](https://mikeeanthony.com/automation-vault)
+[&#8592; Back to the Vault](/automation-vault)

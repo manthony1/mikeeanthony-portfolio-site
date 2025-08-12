@@ -72,8 +72,8 @@ To implement this workflow, you'll need:
 The complete setup process and workflow configuration are demonstrated in the video walkthrough above.
 
 |Resources|
-|---------|
+|-|
 [Resource 1](https://mikeeanthony.com/link1)
 [Resource 2](https://mikeeanthony.com/link2)
 
-[<--Back](https://mikeeanthony.com/automation-vault)
+[&#8592; Back to the Vault](/automation-vault)
