@@ -1,11 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PostsList from "@/components/PostsList";
-import { listPosts } from "@/lib/posts";
+import { listPosts, PostCard } from "@/lib/posts";
 
 const AutomationVault = () => {
-  const posts = listPosts();
+  const [posts, setPosts] = useState<PostCard[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      const loadedPosts = await listPosts();
+      setPosts(loadedPosts);
+      setLoading(false);
+    };
+
+    loadPosts();
+  }, []);
 
   useEffect(() => {
     const title = "Automation Vault | AI Automation Blog";
@@ -65,7 +76,20 @@ const AutomationVault = () => {
 
       <section className="py-10">
         <div className="max-w-4xl mx-auto px-4">
-          <PostsList posts={posts} />
+          {loading ? (
+            <div className="space-y-6">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="h-6 bg-muted rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-muted rounded w-1/2 mb-4"></div>
+                  <div className="h-4 bg-muted rounded w-full mb-2"></div>
+                  <div className="h-4 bg-muted rounded w-2/3"></div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <PostsList posts={posts} />
+          )}
         </div>
       </section>
     </main>

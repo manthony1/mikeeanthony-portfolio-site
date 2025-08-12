@@ -9,11 +9,12 @@ export type PostCard = {
   canonical?: string;
 };
 
-export const listPosts = (): PostCard[] => {
+export const listPosts = async (): Promise<PostCard[]> => {
   try {
     // Use import.meta.glob to get all markdown files
-    const postModules = import.meta.glob('../posts/*.md', { eager: true, as: 'raw' });
-    const posts = Object.entries(postModules).map(([path, content]) => {
+    const postModules = import.meta.glob('../posts/*.md', { as: 'raw' });
+    const postPromises = Object.entries(postModules).map(async ([path, importFn]) => {
+      const content = await importFn();
       const { data } = matter(content);
       const slug = path.split('/').pop()?.replace('.md', '') || '';
       
@@ -26,6 +27,8 @@ export const listPosts = (): PostCard[] => {
         canonical: data.canonical
       };
     });
+
+    const posts = await Promise.all(postPromises);
 
     // Sort by date (newest first)
     return posts.sort((a, b) => {
