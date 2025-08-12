@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PostsList from "@/components/PostsList";
+import { listPosts } from "@/lib/posts";
 
 const AutomationVault = () => {
+  const posts = listPosts();
+
   useEffect(() => {
     const title = "Automation Vault | AI Automation Blog";
     const description = "Automation Vault: tutorials on n8n, AI automation, workflows, and process optimization.";
@@ -62,7 +65,7 @@ const AutomationVault = () => {
 
       <section className="py-10">
         <div className="max-w-4xl mx-auto px-4">
-          <PostsList />
+          <PostsList posts={posts} />
         </div>
       </section>
     </main>
