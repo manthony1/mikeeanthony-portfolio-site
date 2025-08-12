@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import AutomationVault from "./pages/AutomationVault";
-import YouTubeScraper from "./pages/posts/YouTubeScraper";
+import MarkdownPost from "./components/MarkdownPost";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/automation-vault" element={<AutomationVault />} />
-          <Route path="/automation-vault/youtube-scraper" element={<YouTubeScraper />} />
+          <Route path="/automation-vault/:slug" element={<MarkdownPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

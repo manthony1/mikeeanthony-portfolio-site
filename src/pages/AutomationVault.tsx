@@ -1,9 +1,7 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PostsList from "@/components/PostsList";
 
 const AutomationVault = () => {
   useEffect(() => {
@@ -63,40 +61,8 @@ const AutomationVault = () => {
       </header>
 
       <section className="py-10">
-        <div className="max-w-4xl mx-auto px-4 space-y-6">
-          <Card className="hover:shadow-card transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-2xl">
-                <Link to="/automation-vault/youtube-scraper" className="hover:underline">
-                  YouTube Scraper
-                </Link>
-              </CardTitle>
-              <CardDescription>n8n-powered workflow to analyze videos and generate content ideas.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-4 max-w-sm">
-                <AspectRatio ratio={16 / 9}>
-                  <iframe
-                    className="w-full h-full rounded-md border border-border"
-                    src="https://www.youtube.com/embed/YKyQnPxzOO4"
-                    title="YouTube Scraper walkthrough video"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
-                </AspectRatio>
-              </div>
-              <p className="text-muted-foreground">
-                Turn any high-performing YouTube video into a goldmine of new ideas—ready for execution.
-              </p>
-              <div className="mt-4">
-                <Link to="/automation-vault/youtube-scraper" className="text-primary hover:underline">
-                  Read post →
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="max-w-4xl mx-auto px-4">
+          <PostsList />
         </div>
       </section>
     </main>
