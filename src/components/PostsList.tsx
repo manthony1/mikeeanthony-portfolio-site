@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { PostCard } from "@/lib/posts";
+import { Play } from "lucide-react";
 
 interface PostsListProps {
   posts: PostCard[];
@@ -29,7 +30,6 @@ const PostsList = ({ posts }: PostsListProps) => {
                 {post.title}
               </Link>
             </CardTitle>
-            {post.description && <CardDescription>{post.description}</CardDescription>}
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               {post.date && (
                 <time dateTime={post.date}>
@@ -52,22 +52,29 @@ const PostsList = ({ posts }: PostsListProps) => {
             </div>
           </CardHeader>
           <CardContent>
-            {post.slug === 'youtube-scraper' && (
+            {post.coverUrl && (
               <div className="mb-4 max-w-sm">
                 <AspectRatio ratio={16 / 9}>
-                  <iframe
-                    className="w-full h-full rounded-md border border-border"
-                    src="https://www.youtube.com/embed/YKyQnPxzOO4"
-                    title="YouTube Scraper walkthrough video"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
+                  <div className="relative">
+                    <img
+                      src={post.coverUrl}
+                      alt={post.title}
+                      className="w-full h-full object-cover rounded-md border border-border"
+                    />
+                    {post.media?.youtubeId && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-black/70 rounded-full p-3">
+                          <Play className="w-6 h-6 text-white fill-white" />
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </AspectRatio>
               </div>
             )}
-            {post.description && <p className="text-muted-foreground mb-4">{post.description}</p>}
+            <CardDescription className="mb-4">
+              {post.description || post.excerpt}
+            </CardDescription>
             <Link to={`/automation-vault/${post.slug}`} className="text-primary hover:underline">
               Read post →
             </Link>
