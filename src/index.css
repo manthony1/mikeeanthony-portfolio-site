@@ -107,7 +107,7 @@ All colors MUST be HSL.
 
 /* Markdown content */
 .md-body :where(iframe) {
-  width: 100%;
+  width: 50%;
   aspect-ratio: 16 / 9;
   height: auto;
   border: none;
@@ -122,8 +122,18 @@ All colors MUST be HSL.
 .md-body :where(code) { word-wrap: break-word; }
 
 /* Ensure readable text color in markdown content */
-.md-body :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div, a, strong, em, code, pre) {
+.md-body :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div, strong, em, code, pre) {
   color: rgb(241, 242, 243) !important;
+}
+
+/* Style links to match blogroll "Read post →" links */
+.md-body :where(a) {
+  color: hsl(var(--primary)) !important;
+  text-decoration: none;
+}
+
+.md-body :where(a:hover) {
+  text-decoration: underline;
 }
 
 /* Additional override for prose typography plugin */
