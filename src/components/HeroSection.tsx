@@ -82,7 +82,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-6">
+          <div className="flex flex-col items-center justify-center gap-6 pb-[25px]">
             <Button 
               onClick={scrollToProjects}
               size="lg"
