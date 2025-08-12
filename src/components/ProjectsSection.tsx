@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Code2, Database, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProjectsSection = () => {
   const projects = [
@@ -90,8 +91,10 @@ const ProjectsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth">
-            View All Projects
+          <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth" asChild>
+            <Link to="/automation-vault">
+              Automation Vault
+            </Link>
           </Button>
         </div>
       </div>
