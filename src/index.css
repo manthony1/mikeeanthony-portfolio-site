@@ -120,3 +120,8 @@ All colors MUST be HSL.
 }
 .md-body :where(table) { width: 100%; }
 .md-body :where(code) { word-wrap: break-word; }
+
+/* Ensure readable text color in markdown content */
+.md-body :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div) {
+  color: rgb(241, 242, 243) !important;
+}
