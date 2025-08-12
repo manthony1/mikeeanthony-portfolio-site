@@ -10,7 +10,7 @@ tags: ["n8n", "YouTube", "Airtable", "OpenAI"]
 
 This beginner-friendly n8n workflow demonstrates how to automatically analyze YouTube videos and generate content ideas using AI. Perfect for content creators, marketers, and automation enthusiasts looking to streamline their content research process.
 
-<iframe src="https://www.youtube.com/embed/YKyQnPxzOO4" title="YouTube Scraper Workflow Walkthrough" loading="lazy" allowfullscreen style="width: 100%; height: 315px; border: none; border-radius: 8px;"></iframe>
+<iframe src="https://www.youtube.com/embed/YKyQnPxzOO4" title="YouTube Scraper Workflow Walkthrough" loading="lazy" allowfullscreen style="border: none; border-radius: 8px;"></iframe>
 
 ## What This Workflow Does
 
