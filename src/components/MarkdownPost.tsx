@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import matter from "gray-matter";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
@@ -164,14 +165,18 @@ const MarkdownPost = () => {
           </Link>
         </div>
         
-        <article className="prose prose-lg dark:prose-invert max-w-none">
+        <article className="prose prose-lg dark:prose-invert max-w-none md-body">
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
             components={{
-              iframe: ({ node, ...props }) => (
-                <div className="my-8">
-                  <iframe {...props} className="w-full h-80 rounded-lg" />
-                </div>
+              iframe: (props) => (
+                <iframe
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  {...props}
+                />
               ),
             }}
           >

@@ -104,3 +104,19 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Markdown content */
+.md-body :where(iframe) {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  border-radius: 0.5rem;
+}
+.md-body :where(img) {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
+.md-body :where(table) { width: 100%; }
+.md-body :where(code) { word-wrap: break-word; }
