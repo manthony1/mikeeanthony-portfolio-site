@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -84,12 +85,14 @@ const HeroSection = () => {
 
           <div className="flex flex-col items-center justify-center gap-6 pb-[25px]">
             <Button 
-              onClick={scrollToProjects}
               size="lg"
               className="group bg-gradient-primary hover:shadow-glow-primary transition-smooth"
+              asChild
             >
-              Projects
-              <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-smooth" />
+              <Link to="/automation-vault">
+                Automation Vault
+                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-smooth" />
+              </Link>
             </Button>
           </div>
         </div>
