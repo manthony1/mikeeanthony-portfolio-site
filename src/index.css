@@ -130,6 +130,8 @@ All colors MUST be HSL.
 .md-body :where(a) {
   color: hsl(var(--primary)) !important;
   text-decoration: none;
+  font-weight: normal !important;
+  font-size: 0.875rem !important; /* text-sm */
 }
 
 .md-body :where(a:hover) {
