@@ -53,18 +53,19 @@ const PostsList = ({ posts }: PostsListProps) => {
           </CardHeader>
           <CardContent>
             {post.coverUrl && (
-              <div className="mb-4 max-w-sm">
+              <div className="mb-6 w-full max-w-xs">
                 <AspectRatio ratio={16 / 9}>
-                  <div className="relative">
+                  <div className="relative w-full h-full">
                     <img
                       src={post.coverUrl}
                       alt={post.title}
                       className="w-full h-full object-cover rounded-md border border-border"
+                      loading="lazy"
                     />
                     {post.media?.youtubeId && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="bg-black/70 rounded-full p-3">
-                          <Play className="w-6 h-6 text-white fill-white" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/10 rounded-md">
+                        <div className="bg-black/70 rounded-full p-2">
+                          <Play className="w-4 h-4 text-white fill-white" />
                         </div>
                       </div>
                     )}
@@ -72,7 +73,7 @@ const PostsList = ({ posts }: PostsListProps) => {
                 </AspectRatio>
               </div>
             )}
-            <CardDescription className="mb-4">
+            <CardDescription className="mb-4 text-sm leading-relaxed">
               {post.description || post.excerpt}
             </CardDescription>
             <Link to={`/automation-vault/${post.slug}`} className="text-primary hover:underline">
