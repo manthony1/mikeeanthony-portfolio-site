@@ -122,6 +122,11 @@ All colors MUST be HSL.
 .md-body :where(code) { word-wrap: break-word; }
 
 /* Ensure readable text color in markdown content */
-.md-body :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div) {
+.md-body :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div, a, strong, em, code, pre) {
+  color: rgb(241, 242, 243) !important;
+}
+
+/* Additional override for prose typography plugin */
+.prose :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div, a, strong, em, code, pre):not(:where([class~="not-prose"] *)) {
   color: rgb(241, 242, 243) !important;
 }
