@@ -7,37 +7,37 @@ const STATS = [
     value: "$100K", 
     label: "annual savings", 
     skills: ["Ops", "Cost Reduction"],
-    overlay: "Streamlined vendor workflows and platform usage to cut annual costs by over $100K."
+    overlay: "Cut annual costs by $100K for a global tech organization through vendor consolidation and smarter platform use."
   },
   { 
     value: "+25%", 
     label: "efficiency gain", 
     skills: ["Process Improvement", "Integrations"],
-    overlay: "Improved workflows across 3 enterprise integrations, increasing team efficiency by 25%."
+    overlay: "Boosted efficiency by 25% across three enterprise system integrations for a remote ops team."
   },
   { 
     value: "30%", 
     label: "faster reporting", 
     skills: ["Reporting", "Analytics"],
-    overlay: "Optimized reporting processes to deliver actionable insights 30% faster."
+    overlay: "Streamlined a multinational reporting process, delivering insights 30% faster to decision-makers."
   },
   { 
     value: "30%", 
     label: "fewer discrepancies", 
     skills: ["Governance", "QA"],
-    overlay: "Implemented QA governance to reduce reporting errors and discrepancies by 30%."
+    overlay: "Reduced reporting discrepancies by 30% through a quality governance framework for finance operations."
   },
   { 
     value: "20%", 
     label: "faster reviews", 
     skills: ["Excel", "Automation"],
-    overlay: "Developed an Excel tracker that cut document review time by 20%."
+    overlay: "Built an Excel automation for a compliance team, cutting document review time by 20%."
   },
   { 
     value: "460+", 
     label: "submissions/month", 
     skills: ["Compliance", "Federal Standards"],
-    overlay: "Processed 460+ submissions monthly while maintaining strict federal compliance standards."
+    overlay: "Processed over 460 monthly submissions for a federal agency while maintaining strict compliance standards."
   }
 ];
 
