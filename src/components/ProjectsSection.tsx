@@ -28,7 +28,8 @@ const ProjectsSection = () => {
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       category: "Development",
       icon: <Globe className="h-6 w-6" />,
-      status: "Completed"
+      status: "Completed",
+      codeUrl: "https://github.com/manthony1/mikeeanthony-portfolio-site"
     }
   ];
 
@@ -80,10 +81,24 @@ const ProjectsSection = () => {
                     <ExternalLink className="h-4 w-4 mr-2" />
                     View
                   </Button>
-                  <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
+                  {project.codeUrl ? (
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1 hover:shadow-hover transition-smooth"
+                      asChild
+                    >
+                      <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
