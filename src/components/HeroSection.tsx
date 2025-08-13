@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, Linkedin, Github } from "lucide-react";
+import { Settings, Mail, Linkedin, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -90,8 +90,8 @@ const HeroSection = () => {
               asChild
             >
               <Link to="/automation-vault">
+                <Settings className="mr-2 h-4 w-4" />
                 Automation Vault
-                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-smooth" />
               </Link>
             </Button>
           </div>

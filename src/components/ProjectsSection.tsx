@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Code2, Database, Globe } from "lucide-react";
+import { ExternalLink, Github, Code2, Database, Globe, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ProjectsSection = () => {
@@ -93,6 +93,7 @@ const ProjectsSection = () => {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth" asChild>
             <Link to="/automation-vault">
+              <Settings className="mr-2 h-4 w-4" />
               Automation Vault
             </Link>
           </Button>
