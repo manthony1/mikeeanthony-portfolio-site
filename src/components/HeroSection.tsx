@@ -51,6 +51,33 @@ const HeroSection = () => {
           <div className="space-y-4 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             <div className="flex flex-wrap items-center justify-center gap-4 my-12">
               <Button 
+                size="lg"
+                className="group bg-gradient-primary hover:shadow-glow-primary transition-smooth"
+                asChild
+              >
+                <Link to="/automation-vault">
+                  <Settings className="mr-2 h-4 w-4" />
+                  Automation Vault
+                </Link>
+              </Button>
+            </div>
+            
+            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 shadow-card border border-border/50 mx-2 sm:mx-0">
+              <p className="mb-4">
+                <span className="text-primary font-semibold">MBA - University of Redlands</span>
+              </p>
+              <p className="mb-4">
+                <span className="text-primary font-semibold">Project Management Professional (PMP), Lean Six Sigma Green Belt, Network+</span>
+              </p>
+              <p>
+                <span className="text-accent font-semibold">n8n, AI Automation, Workflows, Process Optimization, Business Operations</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-6 pb-[25px]">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button 
                 variant="outline" 
                 size="lg" 
                 className="hover:shadow-hover transition-smooth"
@@ -69,31 +96,6 @@ const HeroSection = () => {
                 GitHub
               </Button>
             </div>
-            
-            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 shadow-card border border-border/50 mx-2 sm:mx-0">
-              <p className="mb-4">
-                <span className="text-primary font-semibold">MBA - University of Redlands</span>
-              </p>
-              <p className="mb-4">
-                <span className="text-primary font-semibold">Project Management Professional (PMP), Lean Six Sigma Green Belt, Network+</span>
-              </p>
-              <p>
-                <span className="text-accent font-semibold">n8n, AI Automation, Workflows, Process Optimization, Business Operations</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-center gap-6 pb-[25px]">
-            <Button 
-              size="lg"
-              className="group bg-gradient-primary hover:shadow-glow-primary transition-smooth"
-              asChild
-            >
-              <Link to="/automation-vault">
-                <Settings className="mr-2 h-4 w-4" />
-                Automation Vault
-              </Link>
-            </Button>
           </div>
         </div>
       </div>
