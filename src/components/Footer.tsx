@@ -13,8 +13,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top row - Credentials */}
         <div className="text-center mb-8">
-          <p className="text-lg text-foreground">
-            <span className="dark:text-foreground light:text-muted-foreground">MBA | PMP | Lean Six Sigma</span>
+          <p className="text-lg text-foreground dark:text-foreground light:text-[hsl(216_12%_44%)]">
+            MBA | PMP | Lean Six Sigma
           </p>
         </div>
 
@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
           {/* Left column */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-reenie">
-              <span className="dark:text-[rgb(241,242,243)] light:text-muted-foreground">Turning chaos into systems</span>
+            <h3 className="text-2xl font-reenie text-[rgb(241,242,243)] dark:text-[rgb(241,242,243)] light:text-[hsl(216_12%_44%)]">
+              Turning chaos into systems
             </h3>
           </div>
 
