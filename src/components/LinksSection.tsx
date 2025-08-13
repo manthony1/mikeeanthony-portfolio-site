@@ -33,8 +33,8 @@ const LinksSection = () => {
       category: "Contact"
     },
     {
-      title: "Resume Download",
-      description: "Download my complete resume in PDF format",
+      title: "Resume/CV",
+      description: "Request my complete resume/cv in PDF format",
       icon: <FileText className="h-6 w-6" />,
       url: "#",
       category: "Documents"
@@ -62,7 +62,7 @@ const LinksSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {links.map((link, index) => {
-            if (link.title === "Resume Download") {
+            if (link.title === "Resume/CV") {
               return (
                 <div key={index} className="block">
                   <Card 
