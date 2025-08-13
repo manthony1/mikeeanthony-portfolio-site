@@ -65,7 +65,7 @@ const AutomationVault = () => {
     <>
       <Navigation />
       <main className="min-h-screen bg-background">
-      <header className="pt-6 pb-8 border-b border-border bg-gradient-to-b from-background to-background/80">
+      <header className="pt-24 pb-6 border-b border-border bg-gradient-to-b from-background to-background/80">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">Automation Vault</h1>
           <p className="mt-3 text-muted-foreground">
