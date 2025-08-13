@@ -2,12 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const STATS = [
-  { value: "30%", label: "faster reporting", badge: "Outcome" },
-  { value: "8+", label: "automations shipped", meta: "n8n, ServiceNow" },
-  { value: "100K", label: "annual savings", badge: "Ops" },
-  { value: "15", label: "dashboards deployed", meta: "Tools: Power BI" },
-  { value: "10K+", label: "records/day processed", meta: "with QA" },
-  { value: "3", label: "enterprise integrations delivered", meta: "Tools: ServiceNow" }
+  { value: "$100K", label: "annual savings", skills: ["Ops", "Cost Reduction"] },
+  { value: "+25%", label: "efficiency gain", skills: ["Process Improvement", "Integrations"] },
+  { value: "30%", label: "faster reporting", skills: ["Reporting", "Analytics"] },
+  { value: "30%", label: "fewer discrepancies", skills: ["Governance", "QA"] },
+  { value: "20%", label: "faster reviews", skills: ["Excel", "Automation"] },
+  { value: "460+", label: "submissions/month", skills: ["Compliance", "Federal Standards"] }
 ];
 
 const ExperienceHighlights = () => {
@@ -32,22 +32,16 @@ const ExperienceHighlights = () => {
                   <div className="text-3xl font-bold text-primary mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-lg font-semibold text-foreground mb-1">
+                  <div className="text-lg font-semibold text-foreground mb-3">
                     {stat.label}
                   </div>
-                  {stat.meta && (
-                    <div className="text-sm text-muted-foreground mb-3">
-                      {stat.meta}
-                    </div>
-                  )}
-                  {stat.badge && (
-                    <Badge 
-                      variant="secondary" 
-                      className="absolute bottom-4 right-4 text-xs bg-primary/10 text-primary border-primary/20"
-                    >
-                      {stat.badge}
-                    </Badge>
-                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {stat.skills.map((skill, skillIndex) => (
+                      <Badge key={skillIndex} variant="outline" className="text-xs">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </li>
