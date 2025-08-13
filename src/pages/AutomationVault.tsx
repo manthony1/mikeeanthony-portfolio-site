@@ -74,7 +74,7 @@ const AutomationVault = () => {
         </div>
       </header>
 
-      <section className="py-10">
+      <section className="pt-8 pb-10">
         <div className="max-w-4xl mx-auto px-4">
           {loading ? (
             <div className="space-y-6">
