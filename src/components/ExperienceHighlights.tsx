@@ -104,15 +104,6 @@ const ExperienceHighlights = () => {
             </li>
           ))}
         </ul>
-
-        <div className="text-center">
-          <a 
-            href="#timeline" 
-            className="text-primary hover:text-primary/80 transition-colors font-medium"
-          >
-            Click to view timeline
-          </a>
-        </div>
       </div>
     </section>
   );
