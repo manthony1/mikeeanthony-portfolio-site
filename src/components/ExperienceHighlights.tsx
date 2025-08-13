@@ -1,16 +1,57 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 const STATS = [
-  { value: "$100K", label: "annual savings", skills: ["Ops", "Cost Reduction"] },
-  { value: "+25%", label: "efficiency gain", skills: ["Process Improvement", "Integrations"] },
-  { value: "30%", label: "faster reporting", skills: ["Reporting", "Analytics"] },
-  { value: "30%", label: "fewer discrepancies", skills: ["Governance", "QA"] },
-  { value: "20%", label: "faster reviews", skills: ["Excel", "Automation"] },
-  { value: "460+", label: "submissions/month", skills: ["Compliance", "Federal Standards"] }
+  { 
+    value: "$100K", 
+    label: "annual savings", 
+    skills: ["Ops", "Cost Reduction"],
+    overlay: "Streamlined vendor workflows and platform usage to cut annual costs by over $100K."
+  },
+  { 
+    value: "+25%", 
+    label: "efficiency gain", 
+    skills: ["Process Improvement", "Integrations"],
+    overlay: "Improved workflows across 3 enterprise integrations, increasing team efficiency by 25%."
+  },
+  { 
+    value: "30%", 
+    label: "faster reporting", 
+    skills: ["Reporting", "Analytics"],
+    overlay: "Optimized reporting processes to deliver actionable insights 30% faster."
+  },
+  { 
+    value: "30%", 
+    label: "fewer discrepancies", 
+    skills: ["Governance", "QA"],
+    overlay: "Implemented QA governance to reduce reporting errors and discrepancies by 30%."
+  },
+  { 
+    value: "20%", 
+    label: "faster reviews", 
+    skills: ["Excel", "Automation"],
+    overlay: "Developed an Excel tracker that cut document review time by 20%."
+  },
+  { 
+    value: "460+", 
+    label: "submissions/month", 
+    skills: ["Compliance", "Federal Standards"],
+    overlay: "Processed 460+ submissions monthly while maintaining strict federal compliance standards."
+  }
 ];
 
 const ExperienceHighlights = () => {
+  const [activeOverlay, setActiveOverlay] = useState<number | null>(null);
+
+  const handleCardClick = (index: number) => {
+    setActiveOverlay(activeOverlay === index ? null : index);
+  };
+
+  const handleCardLeave = () => {
+    setActiveOverlay(null);
+  };
+
   return (
     <section 
       id="experience-highlights" 
@@ -27,8 +68,12 @@ const ExperienceHighlights = () => {
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {STATS.map((stat, index) => (
             <li key={index}>
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-smooth cursor-pointer">
-                <CardContent className="p-6 relative">
+              <Card 
+                className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-smooth cursor-pointer group"
+                onClick={() => handleCardClick(index)}
+                onMouseLeave={handleCardLeave}
+              >
+                <CardContent className="p-6 relative overflow-hidden">
                   <div className="text-3xl font-bold text-primary mb-2">
                     {stat.value}
                   </div>
@@ -41,6 +86,17 @@ const ExperienceHighlights = () => {
                         {skill}
                       </Badge>
                     ))}
+                  </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className={`
+                    absolute inset-0 bg-black/80 flex items-center justify-center p-4 transition-opacity duration-300
+                    ${activeOverlay === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+                    md:group-hover:opacity-100
+                  `}>
+                    <p className="text-white text-center text-sm leading-relaxed">
+                      {stat.overlay}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
