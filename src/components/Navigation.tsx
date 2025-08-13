@@ -12,7 +12,7 @@ const Navigation = () => {
   const sections = [
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
-    { id: "resume", label: "Resume" },
+    { id: "experience-highlights", label: "Impact" },
     { id: "certifications", label: "Certifications" },
     { id: "testimonials", label: "Testimonials" },
     { id: "automation-vault", label: "Automation Vault", route: "/automation-vault" },
