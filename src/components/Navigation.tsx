@@ -3,22 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTheme } from "@/hooks/useTheme";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
-  const [isLightMode, setIsLightMode] = useState(false);
+  const { isLightMode, setIsLightMode } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Apply light mode class to document root
-    if (isLightMode) {
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-    }
-  }, [isLightMode]);
 
   const sections = [
     { id: "about", label: "About" },
