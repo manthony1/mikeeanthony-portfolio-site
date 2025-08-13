@@ -54,7 +54,8 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				}
+				},
+				'footer-text': 'hsl(var(--footer-text))'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
