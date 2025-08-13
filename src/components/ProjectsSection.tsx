@@ -91,11 +91,16 @@ const ProjectsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="hover:shadow-hover transition-smooth" asChild>
-            <Link to="/automation-vault">
-              <Settings className="mr-2 h-4 w-4" />
-              Automation Vault
-            </Link>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="hover:shadow-hover transition-smooth"
+            onClick={() => {
+              window.location.href = "/automation-vault";
+            }}
+          >
+            <Settings className="mr-2 h-4 w-4" />
+            Automation Vault
           </Button>
         </div>
       </div>

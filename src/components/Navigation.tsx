@@ -56,6 +56,15 @@ const Navigation = () => {
     setIsOpen(false);
   };
 
+  const handleRouteNavigation = (route: string) => {
+    navigate(route);
+    setIsOpen(false);
+    // Scroll to top when navigating to a new page
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,14 +85,14 @@ const Navigation = () => {
                   <Button
                     key={section.id}
                     variant="ghost"
+                    onClick={() => handleRouteNavigation(section.route!)}
                     className={`transition-smooth ${
                       activeSection === section.id
                         ? "text-primary"
                         : "text-muted-foreground hover:text-foreground"
                     }`}
-                    asChild
                   >
-                    <Link to={section.route}>{section.label}</Link>
+                    {section.label}
                   </Button>
                 ) : (
                   <Button
@@ -124,16 +133,14 @@ const Navigation = () => {
                   <Button
                     key={section.id}
                     variant="ghost"
+                    onClick={() => handleRouteNavigation(section.route!)}
                     className={`w-full justify-start transition-smooth ${
                       activeSection === section.id
                         ? "text-primary"
                         : "text-muted-foreground"
                     }`}
-                    asChild
                   >
-                    <Link to={section.route} onClick={() => setIsOpen(false)}>
-                      {section.label}
-                    </Link>
+                    {section.label}
                   </Button>
                 ) : (
                   <Button
