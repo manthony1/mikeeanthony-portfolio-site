@@ -90,7 +90,8 @@ const ExperienceHighlights = () => {
                   
                   {/* Hover Overlay */}
                   <div className={`
-                    absolute inset-0 bg-black/80 flex items-center justify-center p-4 transition-opacity duration-300
+                    absolute inset-0 bg-black/80 flex items-center justify-center p-4 rounded-lg 
+                    transition-opacity duration-300 delay-1000
                     ${activeOverlay === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}
                     md:group-hover:opacity-100
                   `}>
