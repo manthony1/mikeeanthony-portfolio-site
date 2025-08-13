@@ -7,13 +7,13 @@ const TestimonialsSection = () => {
       name: "Tim DiSabatino",
       role: "Director",
       company: "VMware",
-      content: " I worked with him on a very complex marketing technology project that involved interfacing with multiple teams across a large, global organization. I was impressed by his ability to make sense of our complicated lead flow and tracking systems. Michael was a fast learner and was able to understand systems that many people who have been at the company for years don't even understand. He was instrumental in setting up a key piece of our martech stack as well as onboarding a large number of global marketing teams to the platform.",
+      content: " I worked with him on a very complex technology project that involved interfacing with multiple teams across a large, global organization. I was impressed by his ability to make sense of our complicated lead flow and tracking systems. Michael was a fast learner and was able to understand systems that many people who have been at the company for years don't even understand.",
       rating: 5
     },
         {
       name: "Liz Fleming",
       role: "Enterprise & Field Marketing Operations Director",
-      company: "Sphere Partners",
+      company: "VMware",
       content: "Michael's strong technical background and ability to translate business challenges into technical requirements enabled him to come up to speed very quickly while in role. He was pivotal in getting our Field Marketing teams trained and enabled on key technologies and worked with them to troubleshoot any challenges they faced. His dedication and desire to do what was best for the business were truly commendable.",
       rating: 5
     },
