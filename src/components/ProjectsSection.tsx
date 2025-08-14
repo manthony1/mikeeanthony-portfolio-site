@@ -15,10 +15,10 @@ const ProjectsSection = () => {
       status: "Completed"
     },
     {
-      title: "Workflow Automation Suite",
-      description: "Designed and implemented automated workflow solutions reducing manual processing time by 60% across multiple business units.",
-      technologies: ["Python", "Power Automate", "REST APIs", "SQL"],
-      category: "Process Improvement",
+      title: "YouTube Content Idea Generator",
+      description: "Automated workflow that scrapes YouTube videos, processes transcripts with AI, and generates organized, ready-to-use content ideas in Airtable.",
+      technologies: ["n8n", "YouTube API", "OpenAI", "Airtable"],
+      category: "Process Automation",
       icon: <Code2 className="h-6 w-6" />,
       status: "Completed"
     },
