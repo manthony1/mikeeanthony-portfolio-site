@@ -55,11 +55,11 @@ const PostsList = ({ posts }: PostsListProps) => {
             {post.coverUrl && (
               <div className="mb-6 w-full max-w-xs">
                 <AspectRatio ratio={16 / 9}>
-                  <div className="relative w-full h-full">
+                  <Link to={`/automation-vault/${post.slug}`} className="relative w-full h-full block group">
                     <img
                       src={post.coverUrl}
                       alt={post.title}
-                      className="w-full h-full object-cover rounded-md border border-border"
+                      className="w-full h-full object-cover rounded-md border border-border group-hover:opacity-90 transition-opacity"
                       loading="lazy"
                     />
                     {post.media?.youtubeId && (
@@ -69,7 +69,7 @@ const PostsList = ({ posts }: PostsListProps) => {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </Link>
                 </AspectRatio>
               </div>
             )}
