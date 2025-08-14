@@ -24,8 +24,8 @@ const ProjectsSection = () => {
     },
     {
       title: "Portfolio Website",
-      description: "Modern, responsive portfolio website built with React and TypeScript, featuring dark mode and smooth animations.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      description: "Modern, responsive portfolio site developed with React, Tailwind, lovable.dev, featuring smooth animations, CI/CD with Netlify, and markdown content management.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "AI Assisted Development", "Netlify"],
       category: "Development",
       icon: <Globe className="h-6 w-6" />,
       status: "Completed",
