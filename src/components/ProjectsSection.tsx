@@ -24,7 +24,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Portfolio Website",
-      description: "Modern, responsive portfolio site developed with React, Tailwind, lovable.dev, featuring smooth animations, CI/CD with Netlify, and markdown content management.",
+      description: "Modern, responsive portfolio site developed with React, Tailwind, lovable.dev, Netlify CI/CD, markdown content, and smooth animations.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "AI Assisted Development", "Netlify"],
       category: "Development",
       icon: <Globe className="h-6 w-6" />,
