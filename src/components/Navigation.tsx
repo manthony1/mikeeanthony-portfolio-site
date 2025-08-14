@@ -124,8 +124,13 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center space-x-2">
+            <Switch
+              checked={isLightMode}
+              onCheckedChange={setIsLightMode}
+              className="data-[state=checked]:bg-primary"
+            />
             <Button
               variant="ghost"
               size="default"
