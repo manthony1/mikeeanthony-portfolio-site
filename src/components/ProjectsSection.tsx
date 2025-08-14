@@ -76,16 +76,12 @@ const ProjectsSection = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="flex gap-2">
-                  <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    View
-                  </Button>
+                <div className="flex justify-center">
                   {project.codeUrl ? (
                     <Button 
                       size="sm" 
                       variant="outline" 
-                      className="flex-1 hover:shadow-hover transition-smooth"
+                      className="hover:shadow-hover transition-smooth"
                       asChild
                     >
                       <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
@@ -94,7 +90,7 @@ const ProjectsSection = () => {
                       </a>
                     </Button>
                   ) : (
-                    <Button size="sm" variant="outline" className="flex-1 hover:shadow-hover transition-smooth">
+                    <Button size="sm" variant="outline" className="hover:shadow-hover transition-smooth">
                       <Github className="h-4 w-4 mr-2" />
                       Code
                     </Button>
