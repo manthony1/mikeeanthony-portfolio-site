@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# Portfolio Website
 
-## Project info
+A modern, responsive personal portfolio built with React, TypeScript, and Tailwind CSS.  
+Developed with AI-assisted coding via [Lovable.dev](https://lovable.dev) and deployed with a continuous integration and deployment pipeline.
 
-**URL**: https://lovable.dev/projects/f3f9a5d3-5916-4ede-a4d2-4e221fe2a93d
+---
 
-## How can I edit this code?
+## 🚀 CI/CD Workflow
+The project follows a streamlined development-to-deployment pipeline:
 
-There are several ways of editing your application.
+1. **Lovable.dev** → AI-assisted code generation and updates
+2. **GitHub** → Version control and code repository
+3. **Netlify** → Continuous deployment and hosting
+4. **Local Development** → Keep local repo in sync with `git pull` often
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f3f9a5d3-5916-4ede-a4d2-4e221fe2a93d) and start prompting.
+## 🛠 Core Technologies
 
-Changes made via Lovable will be committed automatically to this repo.
+- **[React](https://react.dev/)** (with TypeScript)
+- **[Tailwind CSS](https://tailwindcss.com/)**
+- **Markdown Rendering** (via `react-markdown` and `gray-matter`)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📦 Additional Tools & Libraries
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **[lovable.dev](https://lovable.dev)** — AI-assisted development platform
+- **[Vite](https://vitejs.dev/)** — Build tool and development server
+- **[TypeScript](https://www.typescriptlang.org/)** — Static type safety
+- **[React Router DOM](https://reactrouter.com/)** — Client-side routing
+- **[TanStack React Query](https://tanstack.com/query/latest)** — Data fetching and caching
+- **[shadcn/ui](https://ui.shadcn.com/)** — Component library built on Radix UI
+- **[Radix UI](https://www.radix-ui.com/)** — Headless component primitives
+- **[Lucide React](https://lucide.dev/)** — Icon library
+- **[Netlify Forms](https://docs.netlify.com/forms/setup/)** — Form handling
+- **[ical.com](https://ical.com/)** — Calendar booking integration
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🌐 Hosting & Deployment
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Version Control:** [git](https://git-scm.com/)  
+- **Code Repository:** [GitHub](https://github.com/)  
+- **Hosting & CI/CD:** [Netlify](https://www.netlify.com/)
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🏁 Getting Started
 
-**Edit a file directly in GitHub**
+Follow these steps to run the project locally.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f3f9a5d3-5916-4ede-a4d2-4e221fe2a93d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
