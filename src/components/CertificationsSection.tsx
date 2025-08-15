@@ -5,6 +5,7 @@ import comptiaNetworkLogo from "@/assets/comptia-network-logo.png";
 import comptiaSecurityLogo from "@/assets/comptia-security-logo.png";
 import serviceNowLogo from "@/assets/servicenow-logo.png";
 import serviceNowLogoITSM from "@/assets/servicenow-logo-itsm.png";
+import leanSixSigmaLogo from "@/assets/lean-six-sigma-logo.png";
 
 const CertificationsSection = () => {
   const certifications = [
@@ -14,6 +15,14 @@ const CertificationsSection = () => {
       logo: pmpLogo,
       status: "Certified",
       description: "Global standard for project management excellence, demonstrating proven experience and competency in leading teams and delivering results.",
+      year: "2024"
+    },
+    {
+      title: "Lean Six Sigma Green Belt",
+      issuer: "Georgia Tech",
+      logo: leanSixSigmaLogo,
+      status: "Certified",
+      description: "Validates an individual's proficiency in the Lean Six Sigma methodology, a process improvement approach designed to eliminate waste, maximize efficiency, and improve quality.",
       year: "2024"
     },
     {
