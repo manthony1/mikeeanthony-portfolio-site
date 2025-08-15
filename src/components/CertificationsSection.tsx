@@ -40,14 +40,6 @@ const CertificationsSection = () => {
       description: "ServiceNow Certified System Administrator - demonstrates platform administration and configuration expertise.",
       year: "2025"
     },
-    {
-      title: "ServiceNow CIS - ITSM",
-      issuer: "ServiceNow",
-      logo: serviceNowLogoITSM,
-      status: "In Progress",
-      description: "ServiceNow Certified Implementation Specialist for IT Service Management - advanced implementation expertise.",
-      year: "2025"
-    }
   ];
 
   return (
