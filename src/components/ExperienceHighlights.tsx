@@ -74,7 +74,7 @@ const ExperienceHighlights = () => {
                 onMouseLeave={handleCardLeave}
               >
                 <CardContent className="p-6 relative overflow-hidden">
-                  <div className="text-3xl font-bold text-primary mb-2">
+                  <div className="text-4xl font-bold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-lg font-semibold text-foreground mb-3">
