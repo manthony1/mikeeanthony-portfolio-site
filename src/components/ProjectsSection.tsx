@@ -55,12 +55,12 @@ const ProjectsSection = () => {
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-primary">{project.icon}</div>
                   <Badge 
-                    variant={project.status === "Completed" ? "default" : project.status === "In Progress" ? "secondary" : "secondary"}
+                    variant={project.status === "Completed" ? "default" : "secondary"}
                     className={
                       project.status === "Completed" 
                         ? "bg-gradient-primary text-xs" 
                         : project.status === "In Progress"
-                        ? "bg-green-500/20 text-green-400 border-green-400/30 text-xs"
+                        ? "bg-green-500 text-white hover:bg-green-500 text-xs"
                         : "text-xs"
                     }
                   >
