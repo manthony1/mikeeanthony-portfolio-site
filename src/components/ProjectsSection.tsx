@@ -12,7 +12,7 @@ const ProjectsSection = () => {
       technologies: ["Oracle SQL", "DBeaver", "1Z0-171"],
       category: "Database Development",
       icon: <Database className="h-6 w-6" />,
-      status: "Completed"
+      status: "In Progress"
     },
     {
       title: "YouTube Content Idea Generator",
@@ -20,7 +20,7 @@ const ProjectsSection = () => {
       technologies: ["n8n", "YouTube API", "OpenAI", "Airtable"],
       category: "Process Automation",
       icon: <Code2 className="h-6 w-6" />,
-      status: "Completed"
+      status: "In Progress"
     },
     {
       title: "Portfolio Website",
@@ -55,8 +55,14 @@ const ProjectsSection = () => {
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-primary">{project.icon}</div>
                   <Badge 
-                    variant={project.status === "Completed" ? "default" : "secondary"}
-                    className={project.status === "Completed" ? "bg-gradient-primary text-xs" : "text-xs"}
+                    variant={project.status === "Completed" ? "default" : project.status === "In Progress" ? "secondary" : "secondary"}
+                    className={
+                      project.status === "Completed" 
+                        ? "bg-gradient-primary text-xs" 
+                        : project.status === "In Progress"
+                        ? "bg-green-500/20 text-green-400 border-green-400/30 text-xs"
+                        : "text-xs"
+                    }
                   >
                     {project.status}
                   </Badge>
