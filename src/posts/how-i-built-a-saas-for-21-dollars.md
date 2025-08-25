@@ -1,4 +1,14 @@
+---
+title: "How I Built a SaaS in 3 Days for $21.75 — And Turned It Into Two Products"
+description: "Think building SaaS requires a team of developers and thousands of dollars? Think again. In just 3 days and for under $25, I launched a working SaaS MVP using low-code tools — then turned it into not one but two products: a subscription SaaS app and a teaching product. Here’s the exact process, tools, and lessons learned so you can do the same."
+date: "2025-08-25"
+canonical: "/automation-vault/how-i-built-a-saas-for-21-dollars"
+tags: ["saas","n8n", "low-code", "mvp", "entrepreneurship"]
+---
+
 # 🚀 How I Built a SaaS in 3 Days for $21.75 — And Turned It Into Two Products
+
+![3 day saas](/src/posts/img/3-day-saas.png)
 
 Most people think building a SaaS means months of coding, thousands of dollars, and a full dev team.  
 I used to think that too.
@@ -138,3 +148,5 @@ I built my MVP for $21.75, and it turned into two products.
 
 👉 [Check out *Launch Your First SaaS in Just 1 Hour* on Gumroad](https://gumroadmike82.gumroad.com/l/ymkypd/)  
 And imagine sending your first live SaaS link tonight.
+
+[&#8592; Back to the Vault](/automation-vault)
