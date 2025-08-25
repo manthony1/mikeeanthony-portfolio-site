@@ -4,7 +4,7 @@ description: "Think building SaaS requires a team of developers and thousands of
 date: "2025-08-25"
 canonical: "/automation-vault/how-i-built-a-saas-for-21-dollars"
 tags: ["saas","n8n", "low-code", "mvp", "entrepreneurship"]
-coverUrl: "/posts/img/3-day-saas.png"
+cover: "/posts/img/3-day-saas.png"
 ---
 
 # 🚀 How I Built a SaaS in 3 Days for $21.75 — And Turned It Into Two Products
