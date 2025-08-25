@@ -125,7 +125,7 @@ All colors MUST be HSL.
 
 /* Ensure readable text color in markdown content */
 .md-body :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div, strong, em, code, pre) {
-  color: rgb(241, 242, 243) !important;
+  color: hsl(var(--foreground)) !important;
 }
 
 /* Style links to match blogroll "Read post →" links */
@@ -142,5 +142,5 @@ All colors MUST be HSL.
 
 /* Additional override for prose typography plugin */
 .prose :where(p, h1, h2, h3, h4, h5, h6, li, td, th, blockquote, span, div, strong, em, code, pre):not(:where([class~="not-prose"] *)) {
-  color: rgb(241, 242, 243) !important;
+  color: hsl(var(--foreground)) !important;
 }
