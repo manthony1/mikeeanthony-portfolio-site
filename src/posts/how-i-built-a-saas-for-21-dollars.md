@@ -8,7 +8,7 @@ tags: ["saas","n8n", "low-code", "mvp", "entrepreneurship"]
 
 # 🚀 How I Built a SaaS in 3 Days for $21.75 — And Turned It Into Two Products
 
-![3 day saas](/src/posts/img/3-day-saas.png)
+![3 day saas](../src/posts/img/3-day-saas.png)
 
 Most people think building a SaaS means months of coding, thousands of dollars, and a full dev team.  
 I used to think that too.
