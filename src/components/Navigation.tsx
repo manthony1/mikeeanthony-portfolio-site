@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@/hooks/useTheme";
 
@@ -115,22 +115,26 @@ const Navigation = () => {
                 ))}
               </div>
               <div className="ml-4 flex items-center space-x-2">
+                <Sun size={16} className="text-muted-foreground" />
                 <Switch
                   checked={!isLightMode}
                   onCheckedChange={(checked) => setIsLightMode(!checked)}
                   className="data-[state=checked]:bg-primary"
                 />
+                <Moon size={16} className="text-muted-foreground" />
               </div>
             </div>
           </div>
 
           {/* Mobile controls */}
           <div className="md:hidden flex items-center space-x-2">
+            <Sun size={14} className="text-muted-foreground" />
             <Switch
               checked={!isLightMode}
               onCheckedChange={(checked) => setIsLightMode(!checked)}
               className="data-[state=checked]:bg-primary"
             />
+            <Moon size={14} className="text-muted-foreground" />
             <Button
               variant="ghost"
               size="default"
