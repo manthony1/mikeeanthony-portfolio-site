@@ -35,8 +35,6 @@ What makes reactive machines particularly valuable is their reliability and pred
 
 While more advanced AI gets the headlines, these foundational systems continue to serve as workhorses in scenarios where lightning-fast analysis of current conditions matters more than learning from the past.
 
-![AI Agents](/posts/img/the-image.png)
-
 ## Limited Memory AI
 
 Limited Memory AI represents a substantial evolution beyond reactive machines, capable of drawing on stored data to make smarter, context-aware decisions. Unlike their simpler counterparts, these systems don't just react to the immediate environment—they learn from experience and adapt their behavior accordingly.
@@ -50,8 +48,6 @@ Having worked with these systems extensively, I've seen firsthand how Limited Me
 - **Business impact**: Reduced operational costs through predictive capabilities, enhanced customer experiences through personalization, improved decision-making with historical context  
 
 What makes Limited Memory AI particularly valuable is its sweet spot between complexity and practicality. While reactive machines can only respond to what's directly in front of them, Limited Memory AI builds a functional "experience base" that informs each new decision without requiring the vastly more complex architecture of Theory of Mind systems.
-
-![AI Agents](/posts/img/the-image.png)
 
 ## Theory of Mind AI
 
@@ -67,9 +63,9 @@ While still developing, Theory of Mind AI is already transforming several indust
 
 The real power of Theory of Mind AI comes from its ability to combine technical capability with emotional intelligence. Having built systems that integrate these capabilities, I've seen firsthand how they transform from mere tools into genuine assistants that work with humans rather than merely for them.
 
-![AI Agents](/posts/img/the-image.png)
-
 ## Self-aware AI
+
+![AI Agents](/posts/img/self-aware-ai.png)
 
 Self-aware AI represents the most advanced theoretical frontier in artificial intelligence—systems that possess consciousness and understand their own existence. While this type of AI remains largely conceptual, it sparks profound questions about the future relationship between humans and machines.
 
