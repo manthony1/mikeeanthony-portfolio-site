@@ -116,8 +116,8 @@ const Navigation = () => {
               </div>
               <div className="ml-4 flex items-center space-x-2">
                 <Switch
-                  checked={isLightMode}
-                  onCheckedChange={setIsLightMode}
+                  checked={!isLightMode}
+                  onCheckedChange={(checked) => setIsLightMode(!checked)}
                   className="data-[state=checked]:bg-primary"
                 />
               </div>
@@ -127,8 +127,8 @@ const Navigation = () => {
           {/* Mobile controls */}
           <div className="md:hidden flex items-center space-x-2">
             <Switch
-              checked={isLightMode}
-              onCheckedChange={setIsLightMode}
+              checked={!isLightMode}
+              onCheckedChange={(checked) => setIsLightMode(!checked)}
               className="data-[state=checked]:bg-primary"
             />
             <Button
