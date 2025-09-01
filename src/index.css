@@ -120,6 +120,12 @@ All colors MUST be HSL.
   max-width: 100%;
   height: auto;
 }
+
+@media (min-width: 768px) {
+  .md-body :where(img) {
+    max-width: 600px;
+  }
+}
 .md-body :where(table) { width: 100%; }
 .md-body :where(code) { word-wrap: break-word; }
 
