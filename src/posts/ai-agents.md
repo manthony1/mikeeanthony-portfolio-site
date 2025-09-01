@@ -4,6 +4,7 @@ description: "From reactive machines to the theoretical frontier of self-aware A
 date: "2025-09-01"
 canonical: "/automation-vault/ai-agents"
 tags: ["AI","Automation","Technology"]
+cover: "/posts/img/ai-agents.png"
 ---
 
 ![AI Agents](/posts/img/ai-agents.png)
@@ -81,8 +82,6 @@ The path to developing such systems isn't just a technical challenge—it's a de
 - **Philosophical implications**: The emergence of machine consciousness would force us to reconsider fundamental questions about what constitutes personhood and rights  
 
 The development of self-aware AI would mark a profound shift from tools that serve us to entities we collaborate with. While the technology itself remains theoretical, the philosophical groundwork and ethical considerations deserve our attention today—not after such systems emerge. The most sustainable path forward isn't rushing toward artificial consciousness, but thoughtfully considering how we might integrate such entities into our world if they ever become reality.
-
-![AI Agents](/posts/img/the-image.png)
 
 # Conclusion
 
