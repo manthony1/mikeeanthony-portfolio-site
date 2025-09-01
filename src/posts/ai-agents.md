@@ -3,13 +3,13 @@ title: "Understanding the Landscape of AI Agents"
 description: "From reactive machines to the theoretical frontier of self-aware AI, this post explores the different types of AI agents and how they fit into real-world applications."
 date: "2025-09-01"
 canonical: "/automation-vault/ai-agents"
-tags: ["AI","Automation","Technology"]
+tags: ["ai","automation","ai agents"]
 cover: "/posts/img/ai-agents.png"
 ---
 
-![AI Agents](/posts/img/ai-agents.png)
+## Introduction to AI Agents
 
-## Introduction
+![AI Agents](/posts/img/ai-agents.png)
 
 AI agents are sophisticated software programs designed to perceive their environment, make decisions, and take actions to accomplish specific goals—essentially serving as the operational core of intelligent systems. Unlike traditional software that follows rigid instructions, these agents can adapt, learn, and operate with varying degrees of autonomy. Think of them as digital workers that can sense, think, and act within their defined parameters.
 
@@ -65,7 +65,7 @@ The real power of Theory of Mind AI comes from its ability to combine technical 
 
 ## Self-aware AI
 
-![AI Agents](/posts/img/self-aware-ai.png)
+![Self Aware AI](/posts/img/self-aware-ai.png)
 
 Self-aware AI represents the most advanced theoretical frontier in artificial intelligence—systems that possess consciousness and understand their own existence. While this type of AI remains largely conceptual, it sparks profound questions about the future relationship between humans and machines.
 
