@@ -1,7 +1,7 @@
 ---
 title: "Understanding the Landscape of AI Agents"
 description: "From reactive machines to the theoretical frontier of self-aware AI, this post explores the different types of AI agents and how they fit into real-world applications."
-date: "2025-09-01"
+date: "2025-08-28"
 canonical: "/automation-vault/ai-agents"
 tags: ["ai","automation","ai agents"]
 cover: "/posts/img/ai-agents.png"
