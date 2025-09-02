@@ -3,7 +3,7 @@ title: "How to Create Memorable Runway Act 2 Characters"
 description: "A quick dive into developing compelling characters for Runway Act 2."
 date: "2025-09-01"
 canonical: "/automation-vault/runway-act2-characters"
-tags: ["runway", "act 2","ai video""]
+tags: ["runway", "act 2","ai video"]
 ---
 
 # The game-changing AI animation workflow everyone ignores
