@@ -6,7 +6,7 @@ canonical: "/automation-vault/runway-act2-characters"
 tags: ["runway", "act 2","ai video"]
 ---
 
-# The game-changing AI animation workflow from Runway AI
+# How to Create Memorable Runway Act 2 Characters
 
 You can now fully animate any character—face, body, and even voice—from just a single selfie video. With Runway Act 2's upgrade, lifelike character animation is finally as easy as dragging and dropping a video, opening creative possibilities that were unthinkable just months ago.
 
