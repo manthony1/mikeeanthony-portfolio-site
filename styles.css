@@ -104,6 +104,7 @@ section {
   display: flex;
   align-items: center;
   padding-top: 4rem;
+  margin-bottom: 25px;
 }
 
 .hero-content {
