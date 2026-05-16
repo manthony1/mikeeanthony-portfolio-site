@@ -398,6 +398,7 @@ footer {
   justify-content: center;
   margin: 0 auto 1.5rem auto;
   border: 2px solid var(--digital-teal);
+  overflow: hidden;
 }
 
 .cert-icon {
