@@ -114,6 +114,7 @@ section {
 .hero-header-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 1.5rem;
 }
