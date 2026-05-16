@@ -129,7 +129,7 @@ section {
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   margin-bottom: 0.2rem;
 }
 
@@ -451,6 +451,7 @@ footer {
   .hero-avatar {
     width: 100px;
     height: 100px;
+    align-self: center;
   }
   
   .hero-actions {
