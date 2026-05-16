@@ -18,6 +18,22 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+[data-theme="dark"] {
+  --digital-teal:  #3AC0D3;
+  --slate-navy:    #E4E9F2;
+  --silver-mist:   #78909C;
+  --charcoal:      #B0BEC5;
+  --soft-white:    #1A1D24;
+  --white:         #0F1115;
+  --light-teal:    #162B32;
+  --light-navy:    #4A6B99;
+  --sunset-orange: #FF9800;
+
+  --bg-gradient: linear-gradient(135deg, #0A0C10 0%, #11141A 100%);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --hover-shadow: 0 15px 35px rgba(58, 192, 211, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,6 +74,38 @@ a:hover {
 
 section {
   padding: 5rem 0;
+}
+
+/* Top Bar */
+.top-bar {
+  background: var(--white);
+  border-bottom: 1px solid rgba(176, 190, 197, 0.2);
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--slate-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--light-teal);
+  color: var(--digital-teal);
 }
 
 /* Buttons */
