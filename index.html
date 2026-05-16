@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mike Anthony | Professional Resume</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero container">
+    <div class="hero-content" style="margin: 0 auto;">
+      <div class="hero-header-row">
+        <img src="images/pic.jpg" alt="Mike Anthony" class="hero-avatar">
+        <div>
+          <h1>Hi, I'm Mike Anthony</h1>
+          <h2>Audit Professional | IT & Government Performance</h2>
+        </div>
+      </div>
+      <p>I specialize in IT controls, government performance, and compliance reviews. Certified Fraud Examiner (CFE), CISA, and PMP with a strong background in developing audit programs, standardizing workflows, and conducting rigorous data reliability testing.</p>
+      
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">
+          <span class="material-symbols-outlined">download</span>
+          Download Resume (PDF)
+        </a>
+        <a href="#experience" class="btn btn-outline">
+          <span class="material-symbols-outlined">work</span>
+          View Experience
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Filtering Section -->
+  <section id="skills" class="container">
+    <div class="skills-header">
+      <h2>Professional Experience & Projects</h2>
+      <p>Filter my experience by category to see relevant history.</p>
+    </div>
+    
+    <div class="skills-filters" id="filter-container">
+      <button class="filter-btn active" data-filter="all">All Experience</button>
+      <button class="filter-btn" data-filter="audit">Audit & Compliance</button>
+      <button class="filter-btn" data-filter="operations">Operations & Management</button>
+      <button class="filter-btn" data-filter="projects">Key Projects</button>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline Section -->
+  <section id="experience" class="container timeline-section">
+    <div class="timeline" id="timeline">
+
+      <!-- Project 1 -->
+      <div class="timeline-item" data-categories="projects,audit">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Performance Audit Simulation</h3>
+              <div class="timeline-company">Agency KPM Review | SAO-Aligned Methodology</div>
+            </div>
+            <div class="timeline-date">Project</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">GAGAS Standards</span>
+            <span class="tag">SAO Guidelines</span>
+            <span class="tag">Data Reliability Testing</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Designed an end-to-end performance audit engagement scoped to a simulated Texas state agency's Key Performance Measures (KPMs).</li>
+              <li>Developed an audit program with defined objectives, risk assessment criteria, and data reliability procedures.</li>
+              <li>Documented findings using SAO-style workpaper format: condition, criteria, cause, effect, and recommendation.</li>
+              <li>Compiled a findings report with risk-rated deficiencies, root cause analysis, and remediation timelines.</li>
+            </ul>
+          </div>
+          <a href="#" class="media-attachment">
+            <span class="material-symbols-outlined">folder_zip</span>
+            Download Audit Program Sample
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="timeline-item" data-categories="projects,audit">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">IT Controls Review</h3>
+              <div class="timeline-company">TAC 202 / NIST 800-53 Assessment</div>
+            </div>
+            <div class="timeline-date">Project</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">TAC 202</span>
+            <span class="tag">NIST 800-53</span>
+            <span class="tag">Compliance</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Applied structured compliance review procedures across 100+ regulatory elements per application, producing written findings memoranda.</li>
+              <li>Conducted financial and operational feasibility analysis on MUD bond and creation applications comprising over $1 billion in proposed district financing.</li>
+              <li>Developed internal SOPs and examination-style checklists standardizing application intake, reducing reviewer inconsistency.</li>
+              <li>Coordinated multi-discipline reviews with engineers, legal staff, and agency management.</li>
+            </ul>
+          </div>
+          <a href="#" class="media-attachment">
+            <span class="material-symbols-outlined">folder_zip</span>
+            Download Assessment Report
+          </a>
+        </div>
+      </div>
+
+      <!-- Job 0: SilverByte Academy -->
+      <div class="timeline-item" data-categories="operations">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Founder & Lead Instructor</h3>
+              <div class="timeline-company">SilverByte Academy</div>
+            </div>
+            <div class="timeline-date">2023 - Present</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Curriculum Design</span>
+            <span class="tag">Adult Education</span>
+            <span class="tag">Business Strategy</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Founded an educational service dedicated to teaching digital literacy to adults aged 60+. Designed and delivered curriculum for independent living facilities across the Austin metro area.</li>
+            </ul>
+          </div>
+          <a href="#" class="media-attachment">
+            <span class="material-symbols-outlined">folder_zip</span>
+            Download Class Syllabus Sample
+          </a>
+        </div>
+      </div>
+
+      <!-- Job 1 -->
+      <div class="timeline-item" data-categories="audit">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Program Specialist II - Water Supply Division</h3>
+              <div class="timeline-company">Texas Commission on Environmental Quality (TCEQ)</div>
+            </div>
+            <div class="timeline-date">09/2025 – Present</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Feasibility Analysis</span>
+            <span class="tag">Process Standardization</span>
+            <span class="tag">Compliance Review</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Evaluate MUD creation applications for financial and operational feasibility, analyzing bond capacity and infrastructure cost projections.</li>
+              <li>Developed internal SOPs and examination-style checklists for MUD application review, reducing onboarding time and ensuring consistency.</li>
+              <li>Apply structured compliance checklists and documented review criteria across 100+ application elements.</li>
+              <li>Coordinate multi-discipline reviews with engineers, legal staff, and agency management.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="timeline-item" data-categories="audit">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Tax Examiner</h3>
+              <div class="timeline-company">US Dept. of the Treasury, Internal Revenue Service</div>
+            </div>
+            <div class="timeline-date">12/2024 – 09/2025</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Regulatory Review</span>
+            <span class="tag">Exception Documentation</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Applied structured regulatory review procedures to ITIN applications, verifying tax return filing basis, identity documentation, and supporting evidence.</li>
+              <li>Identified procedural non-compliance patterns, documented exceptions, and escalated findings through established review channels.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="timeline-item" data-categories="operations">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Operations Manager</h3>
+              <div class="timeline-company">Stage 4 Solutions @ VMware (Contract)</div>
+            </div>
+            <div class="timeline-date">04/2023 – 11/2023</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">SLA Compliance</span>
+            <span class="tag">Root Cause Analysis</span>
+            <span class="tag">Vendor Management</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Performed operational workflow assessment for SLA compliance, applying root cause analysis to identify control gaps; improved reporting accuracy by 30%.</li>
+              <li>Managed vendor contractual compliance across two cross-functional platform integration projects involving 50+ stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 4 -->
+      <div class="timeline-item" data-categories="operations">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Global Marketing Operations Manager</h3>
+              <div class="timeline-company">Thales Group</div>
+            </div>
+            <div class="timeline-date">01/2022 – 01/2023</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Agile Methodology</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">SQL & BigQuery</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Led agile-based process improvement to global reporting workflow, reducing cycle delays by 30% through systematic bottleneck elimination.</li>
+              <li>Integrated Power BI dashboards using SQL and BigQuery to monitor campaign operations and reporting accuracy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job 5 -->
+      <div class="timeline-item" data-categories="operations">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Marketing Ops & Digital Transformation</h3>
+              <div class="timeline-company">Sphere Consulting</div>
+            </div>
+            <div class="timeline-date">09/2020 – 12/2021</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Project Management</span>
+            <span class="tag">Cross-functional Teams</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Delivered a $100K lead generation platform migration on time and within budget, directly supervising one staff member.</li>
+              <li>Directed analytics and content operations using HubSpot, WordPress, and Monday.com.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications & Education Section -->
+  <section id="education" class="container timeline-section" style="margin-bottom: 5rem;">
+    <h2>Certifications & Education</h2>
+    
+    <div style="margin-bottom: 2rem;">
+      <h3 style="color: var(--digital-teal); margin-bottom: 1rem;">Certifications</h3>
+      <div class="timeline-tags" style="gap: 0.8rem;">
+        <span class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">CFE (Certified Fraud Examiner)</span>
+        <span class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">CISA (Certified Information Systems Auditor)</span>
+        <span class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">PMP (Project Management Professional)</span>
+        <span class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">Lean Six Sigma Green Belt</span>
+        <span class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">Network+</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+      <h3 style="color: var(--digital-teal); margin-bottom: 1rem;">Education</h3>
+      <ul style="list-style: none; padding: 0; color: var(--charcoal); font-size: 0.95rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>M.B.A., Business Administration</strong> — University of Redlands</li>
+        <li style="margin-bottom: 0.5rem;"><strong>B.A. English</strong> — Virginia Tech</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Data Analytics Coursework</strong> — Georgia Tech (Python, Analytics Modeling)</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Accounting Technical Certificate (ATC)</strong> — Austin Community College (In Progress, 2026–2028)</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 style="color: var(--digital-teal); margin-bottom: 1rem;">Tools, Platforms & Frameworks</h3>
+      <ul style="list-style: none; padding: 0; color: var(--charcoal); font-size: 0.95rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Audit Frameworks:</strong> GAGAS, TAC 202, NIST 800-53, DIR Security Controls, TX-RAMP, ISO 27001, CIS Benchmarks</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Performance Audit:</strong> SAO Guide to Performance Measure Management, Key Performance Measures (KPMs), Data Reliability Testing</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Data Analysis:</strong> Excel (advanced), SQL, Power BI, Python, R, BigQuery</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Platforms:</strong> AWS, Google Cloud, Salesforce, WordPress</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Mike Anthony. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <a href="https://mikeeanthony.com" target="_blank" style="display: flex; align-items: center; gap: 0.3rem;"><span class="material-symbols-outlined" style="font-size: 1.1rem;">language</span>mikeeanthony.com</a>
+        <span>|</span>
+        <a href="https://github.com/manthony1" target="_blank" style="display: flex; align-items: center; gap: 0.3rem;"><span class="material-symbols-outlined" style="font-size: 1.1rem;">code</span>github.com/manthony1</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

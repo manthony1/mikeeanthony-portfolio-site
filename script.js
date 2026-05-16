@@ -1,0 +1,55 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  // Skill Filtering Logic
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      timelineItems.forEach(item => {
+        const categories = item.getAttribute('data-categories').split(',');
+
+        if (filterValue === 'all' || categories.includes(filterValue)) {
+          // Show item with animation
+          item.classList.remove('hidden');
+          // Small delay to allow display:block to apply before animating opacity
+          setTimeout(() => {
+            item.classList.remove('fade-out');
+          }, 50);
+        } else {
+          // Hide item with animation
+          item.classList.add('fade-out');
+          // Wait for animation to finish before hiding element
+          setTimeout(() => {
+            if (item.classList.contains('fade-out')) {
+              item.classList.add('hidden');
+            }
+          }, 400); // Matches CSS transition duration
+        }
+      });
+    });
+  });
+
+  // Smooth Scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 50,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
