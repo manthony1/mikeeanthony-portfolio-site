@@ -108,6 +108,25 @@ section {
   color: var(--digital-teal);
 }
 
+.hooray-btn {
+  background: var(--sunset-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(232, 122, 0, 0.3);
+}
+
+.hooray-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 122, 0, 0.4);
+  background: #ff8e1a; /* slightly lighter orange */
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;

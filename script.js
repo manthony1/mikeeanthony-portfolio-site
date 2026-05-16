@@ -54,6 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Hooray Confetti Logic
+  const hoorayBtn = document.getElementById('hoorayBtn');
+  if (hoorayBtn) {
+    hoorayBtn.addEventListener('click', () => {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
+    });
+  }
+
   // Smooth Scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
