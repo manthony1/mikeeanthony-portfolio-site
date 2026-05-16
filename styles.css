@@ -348,9 +348,10 @@ section {
 }
 
 .media-attachment:hover {
-  border-color: var(--digital-teal);
-  color: var(--digital-teal);
-  background: var(--light-teal);
+  border-color: var(--sunset-orange);
+  color: var(--white);
+  background: var(--sunset-orange);
+  box-shadow: 0 4px 10px rgba(232, 122, 0, 0.2);
 }
 
 .media-attachment .material-symbols-outlined {
