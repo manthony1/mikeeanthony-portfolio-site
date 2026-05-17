@@ -84,4 +84,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // Contact Modal Logic
+  const contactBtn = document.getElementById('contactBtn');
+  const contactModal = document.getElementById('contactModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  if (contactBtn && contactModal && closeModalBtn) {
+    // Open modal
+    contactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      contactModal.classList.add('active');
+    });
+
+    // Close modal via button
+    closeModalBtn.addEventListener('click', () => {
+      contactModal.classList.remove('active');
+    });
+
+    // Close modal by clicking outside
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        contactModal.classList.remove('active');
+      }
+    });
+  }
 });

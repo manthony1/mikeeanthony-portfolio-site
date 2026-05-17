@@ -41,7 +41,7 @@
       <p>I specialize in IT controls, government performance, and compliance reviews. Certified PMP, Lean Six Sigma, and Fraud Examiner (CFE), CISA in progress. Strong background in documenting compliance findings, standardizing workflows, and conducting rigorous data reliability testing.</p>
       
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">
+        <a href="files/resume-sample.pdf" target="_blank" class="btn btn-primary">
           <span class="material-symbols-outlined">download</span>
           Download Resume (PDF)
         </a>
@@ -380,7 +380,7 @@
     <div class="container">
       <p>&copy; 2026 Mike Anthony. All rights reserved.</p>
       <p style="margin-top: 0.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-        <a href="#" style="display: flex; align-items: center; gap: 0.3rem;"><span class="material-symbols-outlined" style="font-size: 1.1rem;">mail</span>Contact Me</a>
+        <a href="#" id="contactBtn" style="display: flex; align-items: center; gap: 0.3rem;"><span class="material-symbols-outlined" style="font-size: 1.1rem;">mail</span>Contact Me</a>
         <span>|</span>
         <a href="https://github.com/manthony1" target="_blank" style="display: flex; align-items: center; gap: 0.3rem;"><span class="material-symbols-outlined" style="font-size: 1.1rem;">code</span>GitHub</a>
       </p>
@@ -389,5 +389,35 @@
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="script.js"></script>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>Contact Me</h2>
+        <button id="closeModalBtn" class="close-btn" aria-label="Close">&times;</button>
+      </div>
+      <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="contact-form">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div data-netlify-recaptcha="true" style="margin-bottom: 1rem;"></div>
+        <button type="submit" class="btn btn-primary submit-btn" style="width: 100%; justify-content: center;">Send Message</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
