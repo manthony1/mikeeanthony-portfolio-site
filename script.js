@@ -85,15 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   // Contact Modal Logic
-  const contactBtn = document.getElementById('contactBtn');
+  const contactBtns = [document.getElementById('contactBtn'), document.getElementById('topContactBtn')];
   const contactModal = document.getElementById('contactModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
 
-  if (contactBtn && contactModal && closeModalBtn) {
+  if (contactModal && closeModalBtn) {
     // Open modal
-    contactBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      contactModal.classList.add('active');
+    contactBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          contactModal.classList.add('active');
+        });
+      }
     });
 
     // Close modal via button
