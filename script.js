@@ -119,4 +119,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Character Counter & Basic Sanitization Logic
+  const messageInput = document.getElementById('message');
+  const charCount = document.getElementById('charCount');
+  
+  if (messageInput && charCount) {
+    messageInput.addEventListener('input', () => {
+      // Strip common SQL/XSS characters (<, >, ;, =, {, })
+      const sanitizedValue = messageInput.value.replace(/[<>;={}]/g, '');
+      if (messageInput.value !== sanitizedValue) {
+        messageInput.value = sanitizedValue;
+      }
+
+      const remaining = 750 - messageInput.value.length;
+      charCount.textContent = `${remaining} characters remaining`;
+      
+      if (remaining <= 50) {
+        charCount.style.color = 'var(--sunset-orange)';
+      } else {
+        charCount.style.color = 'var(--silver-mist)';
+      }
+    });
+  }
 });
