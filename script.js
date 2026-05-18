@@ -143,3 +143,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Scroll logic for profile in top bar
+window.addEventListener('scroll', () => {
+  const skillsSection = document.getElementById('skills');
+  const scrollProfile = document.getElementById('scrollProfile');
+  const topBar = document.querySelector('.top-bar');
+
+  if (skillsSection && scrollProfile && topBar) {
+    // Calculate how far we've scrolled relative to the skills section
+    // Starts fading in shortly after scroll and reaches full opacity when skills section hits top bar
+    const startFade = 50;
+    const endFade = skillsSection.offsetTop - topBar.offsetHeight;
+    
+    let opacity = 0;
+    if (window.scrollY > startFade) {
+       opacity = (window.scrollY - startFade) / (endFade - startFade);
+    }
+    
+    // Clamp between 0 and 1
+    opacity = Math.max(0, Math.min(1, opacity));
+    
+    scrollProfile.style.opacity = opacity.toString();
+    
+    if (opacity > 0) {
+      scrollProfile.style.visibility = 'visible';
+    } else {
+      scrollProfile.style.visibility = 'hidden';
+    }
+  }
+});

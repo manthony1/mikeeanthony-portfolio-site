@@ -680,3 +680,34 @@ footer {
     gap: 0.5rem;
   }
 }
+
+/* Scroll Profile in Top Bar */
+.scroll-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, visibility;
+}
+
+.scroll-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--digital-teal);
+}
+
+.scroll-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: var(--slate-navy);
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .scroll-name {
+    display: none;
+  }
+}

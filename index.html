@@ -26,12 +26,21 @@
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container"
-      style="display: flex; justify-content: flex-end; align-items: center; gap: 1rem; width: 100%; padding: 0;">
-      <a href="#" id="topContactBtn" style="font-weight: 500; font-size: 0.9rem;">Contact Me</a>
-      <button class="hooray-btn" id="hoorayBtn">Hooray!</button>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
-        <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
-      </button>
+      style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0;">
+      
+      <!-- Scroll Profile (Fades in on scroll) -->
+      <div class="scroll-profile" id="scrollProfile">
+        <img src="images/pic.jpg" alt="Mike Anthony" class="scroll-avatar">
+        <span class="scroll-name">Mike Anthony</span>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; align-items: center; gap: 1rem;">
+        <a href="#" id="topContactBtn" style="font-weight: 500; font-size: 0.9rem;">Contact Me</a>
+        <button class="hooray-btn" id="hoorayBtn">Hooray!</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+          <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
+        </button>
+      </div>
     </div>
   </div>
 
