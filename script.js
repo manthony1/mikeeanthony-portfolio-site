@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dark Mode Toggle
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
-  
+
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
-      
+
       if (currentTheme === 'dark') {
         document.documentElement.removeAttribute('data-theme');
         themeIcon.textContent = 'dark_mode';
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hoorayBtn.addEventListener('click', () => {
       if (typeof confetti === 'function') {
         confetti({
-          particleCount: 150,
+          particleCount: 150, //150
           spread: 70,
           origin: { y: 0.6 }
         });
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         window.scrollTo({
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Character Counter & Basic Sanitization Logic
   const messageInput = document.getElementById('message');
   const charCount = document.getElementById('charCount');
-  
+
   if (messageInput && charCount) {
     messageInput.addEventListener('input', () => {
       // Strip common SQL/XSS characters (<, >, ;, =, {, })
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const remaining = 750 - messageInput.value.length;
       charCount.textContent = `${remaining} characters remaining`;
-      
+
       if (remaining <= 50) {
         charCount.style.color = 'var(--sunset-orange)';
       } else {
