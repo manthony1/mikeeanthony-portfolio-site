@@ -19,6 +19,18 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Dark Mode initialization script (prevents theme flash on load) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
 </head>
 
 <body>

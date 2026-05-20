@@ -36,20 +36,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dark Mode Toggle
+  // Dark Mode Toggle & Cache Initialization
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
 
-  if (themeToggle) {
+  // Initialize icon to match the theme applied by the inline script
+  if (themeIcon) {
+    const activeTheme = document.documentElement.getAttribute('data-theme');
+    if (activeTheme === 'dark') {
+      themeIcon.textContent = 'light_mode';
+    } else {
+      themeIcon.textContent = 'dark_mode';
+    }
+  }
+
+  if (themeToggle && themeIcon) {
     themeToggle.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
 
       if (currentTheme === 'dark') {
         document.documentElement.removeAttribute('data-theme');
         themeIcon.textContent = 'dark_mode';
+        localStorage.setItem('theme', 'light');
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         themeIcon.textContent = 'light_mode';
+        localStorage.setItem('theme', 'dark');
       }
     });
   }
