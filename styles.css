@@ -567,9 +567,9 @@ footer {
   border: 1.5px solid var(--sunset-orange);
 }
 
-.cert-card.underway .cert-icon-wrapper {
-  border: 2px dashed var(--silver-mist);
-  background: rgba(176, 190, 197, 0.1);
+.cert-card.underway .cert-icon-wrapper img {
+  opacity: 0.75;
+  filter: grayscale(10%);
 }
 
 .cert-card.underway .cert-icon {
