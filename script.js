@@ -132,6 +132,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Download Modal Logic
+  const heroDownloadBtn = document.getElementById('heroDownloadBtn');
+  const downloadModal = document.getElementById('downloadModal');
+  const closeDownloadModalBtn = document.getElementById('closeDownloadModalBtn');
+  const directDownloadBtn = document.getElementById('directDownloadBtn');
+
+  if (downloadModal && closeDownloadModalBtn && heroDownloadBtn) {
+    const resetDownloadModalState = () => {
+      downloadModal.classList.remove('active');
+      if (typeof grecaptcha !== 'undefined') {
+        try {
+          grecaptcha.reset(1);
+        } catch (e) {
+          try {
+            grecaptcha.reset();
+          } catch (e2) {}
+        }
+      }
+      if (directDownloadBtn) {
+        directDownloadBtn.classList.add('disabled');
+        directDownloadBtn.setAttribute('aria-disabled', 'true');
+      }
+    };
+
+    // Open download modal
+    heroDownloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      downloadModal.classList.add('active');
+    });
+
+    // Close modal via button
+    closeDownloadModalBtn.addEventListener('click', () => {
+      resetDownloadModalState();
+    });
+
+    // Close modal by clicking outside
+    downloadModal.addEventListener('click', (e) => {
+      if (e.target === downloadModal) {
+        resetDownloadModalState();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && downloadModal.classList.contains('active')) {
+        resetDownloadModalState();
+      }
+    });
+
+    // Auto-close modal after download starts (delayed to let browser handle the click/new tab)
+    if (directDownloadBtn) {
+      directDownloadBtn.addEventListener('click', () => {
+        setTimeout(() => {
+          resetDownloadModalState();
+        }, 1000);
+      });
+    }
+  }
+
   // Character Counter & Basic Sanitization Logic
   const messageInput = document.getElementById('message');
   const charCount = document.getElementById('charCount');
@@ -185,3 +244,20 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+
+// Global reCAPTCHA Callback Functions
+window.onDownloadCaptchaSuccess = function(token) {
+  const directDownloadBtn = document.getElementById('directDownloadBtn');
+  if (directDownloadBtn) {
+    directDownloadBtn.classList.remove('disabled');
+    directDownloadBtn.removeAttribute('aria-disabled');
+  }
+};
+
+window.onDownloadCaptchaExpired = function() {
+  const directDownloadBtn = document.getElementById('directDownloadBtn');
+  if (directDownloadBtn) {
+    directDownloadBtn.classList.add('disabled');
+    directDownloadBtn.setAttribute('aria-disabled', 'true');
+  }
+};

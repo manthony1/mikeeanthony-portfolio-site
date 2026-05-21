@@ -78,10 +78,10 @@
         workflows, and conducting rigorous data reliability testing.</p>
 
       <div class="hero-actions">
-        <a href="files/Resume_Public_Current.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <button id="heroDownloadBtn" class="btn btn-primary">
           <span class="material-symbols-outlined">download</span>
           Download Resume (PDF)
-        </a>
+        </button>
         <a href="#skills" class="btn btn-outline">
           <span class="material-symbols-outlined">work</span>
           View Experience
@@ -514,6 +514,26 @@
         <div data-netlify-recaptcha="true" style="margin-bottom: 1rem;"></div>
         <button type="submit" class="btn btn-primary submit-btn" style="width: 100%; justify-content: center;">Send
           Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Download Resume Modal -->
+  <div id="downloadModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>Verify & Download</h2>
+        <button id="closeDownloadModalBtn" class="close-btn" aria-label="Close">&times;</button>
+      </div>
+      <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--charcoal);">
+        Complete the verification challenge to enable download.
+      </p>
+      <form name="resume-download" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+        <div data-netlify-recaptcha="true" data-callback="onDownloadCaptchaSuccess" data-expired-callback="onDownloadCaptchaExpired" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"></div>
+        <a href="files/Resume_Public_Current.pdf" target="_blank" rel="noopener noreferrer" id="directDownloadBtn" class="btn btn-primary disabled" style="width: 100%; justify-content: center;" aria-disabled="true">
+          <span class="material-symbols-outlined">download</span>
+          Download Resume (PDF)
+        </a>
       </form>
     </div>
   </div>

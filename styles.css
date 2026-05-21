@@ -175,6 +175,14 @@ section {
   color: var(--white);
 }
 
+.btn.disabled,
+.btn[disabled] {
+  opacity: 0.5;
+  pointer-events: none !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* Hero Section */
 .hero {
   min-height: 50vh;
