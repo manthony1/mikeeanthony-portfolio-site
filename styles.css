@@ -538,6 +538,44 @@ footer {
   flex-grow: 1;
 }
 
+/* Underway / In-Progress Certification Cards */
+.cert-card.underway {
+  border: 2px dashed var(--silver-mist);
+  background: rgba(244, 246, 248, 0.45);
+  cursor: default;
+}
+
+[data-theme="dark"] .cert-card.underway {
+  background: rgba(26, 29, 36, 0.45);
+}
+
+.cert-card.underway:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--silver-mist);
+}
+
+.cert-badge.underway {
+  background: rgba(232, 122, 0, 0.1);
+  color: var(--sunset-orange);
+  border: 1.5px solid var(--sunset-orange);
+}
+
+[data-theme="dark"] .cert-badge.underway {
+  background: rgba(255, 152, 0, 0.15);
+  color: var(--sunset-orange);
+  border: 1.5px solid var(--sunset-orange);
+}
+
+.cert-card.underway .cert-icon-wrapper {
+  border: 2px dashed var(--silver-mist);
+  background: rgba(176, 190, 197, 0.1);
+}
+
+.cert-card.underway .cert-icon {
+  color: var(--silver-mist);
+}
+
 /* Contact Modal */
 .modal-overlay {
   position: fixed;
