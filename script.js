@@ -137,44 +137,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const downloadModal = document.getElementById('downloadModal');
   const closeDownloadModalBtn = document.getElementById('closeDownloadModalBtn');
   const directDownloadBtn = document.getElementById('directDownloadBtn');
-  let downloadCaptchaPollInterval = null;
+  let downloadWidgetId = null;
+
+  // Render download CAPTCHA programmatically by extracting the sitekey Netlify generates for the contact form
+  const initDownloadRecaptcha = () => {
+    let attempts = 0;
+    const checkExist = setInterval(() => {
+      attempts++;
+      const contactRecaptcha = document.querySelector('#contactModal .g-recaptcha') || document.querySelector('#contactModal [data-netlify-recaptcha="true"]');
+      
+      if (typeof grecaptcha !== 'undefined' && contactRecaptcha && contactRecaptcha.getAttribute('data-sitekey')) {
+        clearInterval(checkExist);
+        const siteKey = contactRecaptcha.getAttribute('data-sitekey');
+        try {
+          downloadWidgetId = grecaptcha.render('download-recaptcha-container', {
+            'sitekey': siteKey,
+            'callback': function(response) {
+              if (directDownloadBtn) {
+                directDownloadBtn.classList.remove('disabled');
+                directDownloadBtn.removeAttribute('aria-disabled');
+              }
+            },
+            'expired-callback': function() {
+              if (directDownloadBtn) {
+                directDownloadBtn.classList.add('disabled');
+                directDownloadBtn.setAttribute('aria-disabled', 'true');
+              }
+            }
+          });
+        } catch (e) {
+          console.error("Failed to render download reCAPTCHA", e);
+        }
+      }
+      
+      if (attempts > 50) {
+        clearInterval(checkExist);
+        console.log("Download reCAPTCHA initialization timed out (expected on localhost/non-Netlify environments).");
+      }
+    }, 100);
+  };
 
   if (downloadModal && closeDownloadModalBtn && heroDownloadBtn) {
-    const startCaptchaPolling = () => {
-      if (downloadCaptchaPollInterval) clearInterval(downloadCaptchaPollInterval);
-      downloadCaptchaPollInterval = setInterval(() => {
-        const responseTextarea = document.querySelector('#downloadModal [name="g-recaptcha-response"]');
-        if (responseTextarea && responseTextarea.value) {
-          if (directDownloadBtn && directDownloadBtn.classList.contains('disabled')) {
-            directDownloadBtn.classList.remove('disabled');
-            directDownloadBtn.removeAttribute('aria-disabled');
-          }
-        } else {
-          if (directDownloadBtn && !directDownloadBtn.classList.contains('disabled')) {
-            directDownloadBtn.classList.add('disabled');
-            directDownloadBtn.setAttribute('aria-disabled', 'true');
-          }
-        }
-      }, 500);
-    };
-
-    const stopCaptchaPolling = () => {
-      if (downloadCaptchaPollInterval) {
-        clearInterval(downloadCaptchaPollInterval);
-        downloadCaptchaPollInterval = null;
-      }
-    };
+    initDownloadRecaptcha();
 
     const resetDownloadModalState = () => {
       downloadModal.classList.remove('active');
-      stopCaptchaPolling();
-      if (typeof grecaptcha !== 'undefined') {
+      if (downloadWidgetId !== null && typeof grecaptcha !== 'undefined') {
         try {
-          grecaptcha.reset(1);
+          grecaptcha.reset(downloadWidgetId);
         } catch (e) {
-          try {
-            grecaptcha.reset();
-          } catch (e2) {}
+          console.warn("reCAPTCHA reset failed", e);
         }
       }
       if (directDownloadBtn) {
@@ -187,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
     heroDownloadBtn.addEventListener('click', (e) => {
       e.preventDefault();
       downloadModal.classList.add('active');
-      startCaptchaPolling();
     });
 
     // Close modal via button
@@ -273,19 +284,3 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Global reCAPTCHA Callback Functions
-window.onDownloadCaptchaSuccess = function(token) {
-  const directDownloadBtn = document.getElementById('directDownloadBtn');
-  if (directDownloadBtn) {
-    directDownloadBtn.classList.remove('disabled');
-    directDownloadBtn.removeAttribute('aria-disabled');
-  }
-};
-
-window.onDownloadCaptchaExpired = function() {
-  const directDownloadBtn = document.getElementById('directDownloadBtn');
-  if (directDownloadBtn) {
-    directDownloadBtn.classList.add('disabled');
-    directDownloadBtn.setAttribute('aria-disabled', 'true');
-  }
-};
