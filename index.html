@@ -55,6 +55,7 @@
 
       <div style="display: flex; justify-content: flex-end; align-items: center; gap: 1rem;">
         <a href="#" id="topContactBtn" style="font-weight: 500; font-size: 0.9rem;">Contact Me</a>
+        <a href="#audit-demo" style="font-weight: 500; font-size: 0.9rem;">Audit Demo</a>
         <button class="hooray-btn" id="hoorayBtn">Hooray!</button>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
           <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
@@ -352,6 +353,69 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Compliance Assessment Tool Demo -->
+  <section id="audit-demo" class="container timeline-section" style="margin-bottom: 5rem;">
+    <h2 style="text-align: center; margin-bottom: 1rem;">Interactive Audit Demo</h2>
+    <p style="text-align: center; color: var(--charcoal); margin-bottom: 3rem; font-size: 1.05rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+      Adapted directly from methodologies and control checklists I use in my actual audit and compliance work, this interactive simulator demonstrates how I verify standard operating controls, reconcile exceptions, and monitor risk levels in real time.
+    </p>
+
+    <div class="audit-layout">
+      <!-- Left Column: Scenario selector and checklist -->
+      <div class="audit-checklist-col">
+        <div class="scenario-selector">
+          <button class="scenario-btn active" data-scenario="mud" id="btn-scenario-mud">MUD Creation Assessment</button>
+          <button class="scenario-btn" data-scenario="reconcile" id="btn-scenario-reconcile">Special District Financial Reconciliation</button>
+          <button class="scenario-btn" data-scenario="it" id="btn-scenario-it">IT Controls Audit</button>
+        </div>
+
+        <div class="checklist-card">
+          <div class="checklist-header">
+            <span class="material-symbols-outlined header-icon">assignment_turned_in</span>
+            <h3 id="scenario-title">MUD Creation Assessment (30 TAC §293)</h3>
+          </div>
+          <div id="controls-checklist" class="controls-list">
+            <!-- Controls will be dynamically inserted here via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Status circular gauge and recommendations -->
+      <div class="audit-status-col">
+        <div class="status-card risk-level-critical" id="statusCard">
+          <div class="status-card-header">
+            <h4>Assessment Status</h4>
+            <span class="risk-badge" id="riskBadge">Critical Risk</span>
+          </div>
+
+          <!-- Circular Score Meter -->
+          <div class="circular-meter-container">
+            <svg class="progress-ring" width="160" height="160">
+              <!-- Background circle -->
+              <circle class="progress-ring__background" stroke="rgba(255, 255, 255, 0.2)" stroke-width="12" fill="transparent" r="68" cx="80" cy="80" />
+              <!-- Animated progress circle -->
+              <circle class="progress-ring__circle" id="progressCircle" stroke="#FFFFFF" stroke-width="12" fill="transparent" r="68" cx="80" cy="80" />
+            </svg>
+            <div class="progress-score-text">
+              <span id="progressPercent">0%</span>
+              <span class="score-label">Verified</span>
+            </div>
+          </div>
+
+          <div class="audit-recommendation-box">
+            <div class="rec-title">
+              <span class="material-symbols-outlined" id="recIcon">warning</span>
+              <span>SOP Auditor Action Required</span>
+            </div>
+            <p id="recommendationText" class="rec-text">
+              Initial assessment. Select and verify critical controls to evaluate compliance risk levels.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

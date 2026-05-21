@@ -819,3 +819,336 @@ footer {
   background: rgba(0, 0, 0, 0.35);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
+
+/* ==========================================================================
+   Interactive Compliance Assessment Tool
+   ========================================================================== */
+.audit-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.scenario-selector {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.scenario-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid var(--silver-mist);
+  background: var(--white);
+  color: var(--slate-navy);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.scenario-btn:hover {
+  border-color: var(--digital-teal);
+  color: var(--digital-teal);
+}
+
+.scenario-btn.active {
+  background: var(--digital-teal);
+  border-color: var(--digital-teal);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(33, 150, 166, 0.2);
+}
+
+.checklist-card {
+  background: var(--white);
+  border: 1px solid rgba(176, 190, 197, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.checklist-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(176, 190, 197, 0.2);
+  padding-bottom: 1rem;
+}
+
+.checklist-header .header-icon {
+  color: var(--digital-teal);
+  font-size: 1.8rem;
+}
+
+.checklist-header h3 {
+  font-size: 1.25rem;
+  color: var(--slate-navy);
+}
+
+.controls-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Custom Checkbox Items */
+.control-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--soft-white);
+  border: 1px solid rgba(176, 190, 197, 0.2);
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.control-item:hover {
+  border-color: var(--digital-teal);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(33, 150, 166, 0.05);
+}
+
+.control-item input[type="checkbox"] {
+  display: none; /* Hide standard checkbox */
+}
+
+.custom-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--silver-mist);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  flex-shrink: 0;
+  transition: var(--transition);
+  margin-top: 0.1rem;
+}
+
+.control-item:hover .custom-checkbox {
+  border-color: var(--digital-teal);
+}
+
+.control-item.checked .custom-checkbox {
+  background: var(--digital-teal);
+  border-color: var(--digital-teal);
+}
+
+.custom-checkbox::after {
+  content: 'check';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1rem;
+  color: var(--white);
+  display: none;
+}
+
+.control-item.checked .custom-checkbox::after {
+  display: block;
+}
+
+.control-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.control-label {
+  font-weight: 600;
+  color: var(--slate-navy);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.control-item.checked .control-label {
+  color: var(--digital-teal);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.control-desc {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  opacity: 0.85;
+}
+
+/* Status Card styling */
+.status-card {
+  border-radius: 16px;
+  padding: 2.2rem;
+  box-shadow: var(--card-shadow);
+  color: var(--white) !important;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Risk Gradient States */
+.status-card.risk-level-critical {
+  background: linear-gradient(135deg, #E05252 0%, #F28D35 100%);
+  box-shadow: 0 10px 30px rgba(224, 82, 82, 0.25);
+}
+
+.status-card.risk-level-high {
+  background: linear-gradient(135deg, #F28D35 0%, #E0B034 100%);
+  box-shadow: 0 10px 30px rgba(242, 141, 53, 0.25);
+}
+
+.status-card.risk-level-medium {
+  background: linear-gradient(135deg, #E0B034 0%, #2196A6 100%);
+  box-shadow: 0 10px 30px rgba(224, 176, 52, 0.25);
+}
+
+.status-card.risk-level-low {
+  background: linear-gradient(135deg, #2196A6 0%, #1E3A5F 100%);
+  box-shadow: 0 10px 30px rgba(33, 150, 166, 0.3);
+}
+
+.status-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-card-header h4 {
+  color: var(--white) !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.risk-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Circular Score Gauge */
+.circular-meter-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring__circle {
+  stroke-dasharray: 427.26; /* Circumference of r=68 is 2 * pi * 68 = 427.256 */
+  stroke-dashoffset: 427.26;
+  transition: stroke-dashoffset 0.5s ease-in-out, stroke 0.5s ease-in-out;
+  stroke-linecap: round;
+}
+
+.progress-score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#progressPercent {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+/* SOP Recommendation Box */
+.audit-recommendation-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.rec-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.rec-title span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.rec-title .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.rec-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
+/* Dark theme overrides for custom checklist cards */
+[data-theme="dark"] .checklist-card {
+  background: var(--white); /* In dark mode, --white resolves to the dark color (#0F1115) */
+  border-color: rgba(120, 144, 156, 0.2);
+}
+
+[data-theme="dark"] .control-item {
+  background: var(--soft-white); /* Resolves to #1A1D24 in dark theme */
+  border-color: rgba(120, 144, 156, 0.15);
+}
+
+[data-theme="dark"] .control-item:hover {
+  border-color: var(--digital-teal);
+}
+
+[data-theme="dark"] .custom-checkbox {
+  background: #0F1115;
+  border-color: var(--silver-mist);
+}
+
+[data-theme="dark"] .control-item.checked .custom-checkbox {
+  background: var(--digital-teal);
+  border-color: var(--digital-teal);
+}
+
+/* Responsive collapse */
+@media (max-width: 768px) {
+  .audit-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
