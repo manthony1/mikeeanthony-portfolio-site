@@ -137,10 +137,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const downloadModal = document.getElementById('downloadModal');
   const closeDownloadModalBtn = document.getElementById('closeDownloadModalBtn');
   const directDownloadBtn = document.getElementById('directDownloadBtn');
+  let downloadCaptchaPollInterval = null;
 
   if (downloadModal && closeDownloadModalBtn && heroDownloadBtn) {
+    const startCaptchaPolling = () => {
+      if (downloadCaptchaPollInterval) clearInterval(downloadCaptchaPollInterval);
+      downloadCaptchaPollInterval = setInterval(() => {
+        const responseTextarea = document.querySelector('#downloadModal [name="g-recaptcha-response"]');
+        if (responseTextarea && responseTextarea.value) {
+          if (directDownloadBtn && directDownloadBtn.classList.contains('disabled')) {
+            directDownloadBtn.classList.remove('disabled');
+            directDownloadBtn.removeAttribute('aria-disabled');
+          }
+        } else {
+          if (directDownloadBtn && !directDownloadBtn.classList.contains('disabled')) {
+            directDownloadBtn.classList.add('disabled');
+            directDownloadBtn.setAttribute('aria-disabled', 'true');
+          }
+        }
+      }, 500);
+    };
+
+    const stopCaptchaPolling = () => {
+      if (downloadCaptchaPollInterval) {
+        clearInterval(downloadCaptchaPollInterval);
+        downloadCaptchaPollInterval = null;
+      }
+    };
+
     const resetDownloadModalState = () => {
       downloadModal.classList.remove('active');
+      stopCaptchaPolling();
       if (typeof grecaptcha !== 'undefined') {
         try {
           grecaptcha.reset(1);
@@ -160,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     heroDownloadBtn.addEventListener('click', (e) => {
       e.preventDefault();
       downloadModal.classList.add('active');
+      startCaptchaPolling();
     });
 
     // Close modal via button
