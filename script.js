@@ -587,6 +587,63 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     renderScenario(currentScenario);
   }
+
+  // Key Impact Metrics Count-up Animation
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  const animateStats = () => {
+    statNumbers.forEach(stat => {
+      const target = parseInt(stat.getAttribute('data-target'), 10);
+      const suffix = stat.getAttribute('data-suffix') || '';
+      const duration = 1500; // 1.5 seconds duration
+      const startTime = performance.now();
+      
+      const updateNumber = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (easeOutQuad)
+        const easeProgress = progress * (2 - progress);
+        const currentValue = Math.round(target * easeProgress);
+        
+        stat.textContent = `${currentValue}${suffix}`;
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        } else {
+          stat.textContent = `${target}${suffix}`;
+        }
+      };
+      
+      requestAnimationFrame(updateNumber);
+    });
+  };
+
+  if (statNumbers.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const observerOptions = {
+        root: null,
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateStats();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      const statsGrid = document.querySelector('.hero-stats-grid');
+      if (statsGrid) {
+        observer.observe(statsGrid);
+      }
+    } else {
+      // Fallback if IntersectionObserver is not supported
+      animateStats();
+    }
+  }
 });
 
 // Scroll logic for profile in top bar
