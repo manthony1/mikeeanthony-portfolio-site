@@ -44,22 +44,33 @@
 
   <!-- Top Bar -->
   <div class="top-bar">
-    <div class="container"
-      style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0;">
-
+    <div class="container top-bar-container">
+ 
       <!-- Scroll Profile (Fades in on scroll) -->
       <div class="scroll-profile" id="scrollProfile">
         <img src="images/pic.jpg" alt="Mike Anthony" class="scroll-avatar">
         <span class="scroll-name">Mike Anthony</span>
       </div>
-
-      <div style="display: flex; justify-content: flex-end; align-items: center; gap: 1rem;">
-        <a href="#" id="topContactBtn" style="font-weight: 500; font-size: 0.9rem;">Contact Me</a>
-        <a href="#audit-demo" style="font-weight: 500; font-size: 0.9rem;">Audit Demo</a>
-        <button class="hooray-btn" id="hoorayBtn">Hooray!</button>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
-          <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
-        </button>
+ 
+      <div class="top-bar-right">
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" id="navMenu">
+          <a href="#" id="topContactBtn">Contact Me</a>
+          <a href="#audit-demo">Audit Demo</a>
+        </nav>
+ 
+        <!-- Action Buttons (always visible) -->
+        <div class="nav-actions">
+          <button class="hooray-btn" id="hoorayBtn">Hooray!</button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+            <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
+          </button>
+          <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -645,6 +645,37 @@ document.addEventListener('DOMContentLoaded', () => {
       animateStats();
     }
   }
+
+  // Mobile Hamburger Menu Logic
+  const hamburgerToggle = document.getElementById('hamburgerToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  if (hamburgerToggle && navMenu) {
+    hamburgerToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navMenu.classList.toggle('active');
+      hamburgerToggle.classList.toggle('active');
+      hamburgerToggle.setAttribute('aria-expanded', isActive);
+    });
+
+    // Close menu when clicking a link
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburgerToggle.classList.remove('active');
+        hamburgerToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburgerToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        hamburgerToggle.classList.remove('active');
+        hamburgerToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 });
 
 // Scroll logic for profile in top bar
