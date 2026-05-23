@@ -594,6 +594,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const animateStats = () => {
     statNumbers.forEach(stat => {
       const target = parseInt(stat.getAttribute('data-target'), 10);
+      const prefix = stat.getAttribute('data-prefix') || '';
       const suffix = stat.getAttribute('data-suffix') || '';
       const duration = 1500; // 1.5 seconds duration
       const startTime = performance.now();
@@ -606,12 +607,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const easeProgress = progress * (2 - progress);
         const currentValue = Math.round(target * easeProgress);
         
-        stat.textContent = `${currentValue}${suffix}`;
+        stat.textContent = `${prefix}${currentValue}${suffix}`;
         
         if (progress < 1) {
           requestAnimationFrame(updateNumber);
         } else {
-          stat.textContent = `${target}${suffix}`;
+          stat.textContent = `${prefix}${target}${suffix}`;
         }
       };
       
