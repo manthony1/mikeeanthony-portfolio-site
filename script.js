@@ -298,13 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
           desc: "Ensure an engineering report certifies sufficient water supply capacity exists."
         },
         {
-          id: "mud-env",
-          label: "Acquire Environmental Site Clearance",
-          desc: "Confirm that environmental impact reviews and site assessments are completed."
-        },
-        {
           id: "mud-board",
-          label: "Secure Governing Board Approval",
+          label: "Assess Governing Board Approvals",
           desc: "Obtain certified resolution from the County Commissioner's court or City Council."
         }
       ],
