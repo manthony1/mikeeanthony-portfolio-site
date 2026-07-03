@@ -83,8 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth Scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href');
+      
+      // If the href was dynamically changed to a real URL, allow default behavior
+      if (!targetId || !targetId.startsWith('#')) return;
+      
+      e.preventDefault();
       if (targetId === '#') return;
 
       const targetElement = document.querySelector(targetId);
