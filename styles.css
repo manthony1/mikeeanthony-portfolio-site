@@ -788,6 +788,40 @@ footer {
   color: var(--silver-mist);
 }
 
+/* Expired Certification Cards */
+.cert-card.expired {
+  border: 2px dashed var(--silver-mist);
+  background: rgba(244, 246, 248, 0.45);
+  cursor: default;
+}
+
+[data-theme="dark"] .cert-card.expired {
+  background: rgba(26, 29, 36, 0.45);
+}
+
+.cert-card.expired:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--silver-mist);
+}
+
+.cert-badge.expired {
+  background: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+  border: 1.5px solid #D32F2F;
+}
+
+[data-theme="dark"] .cert-badge.expired {
+  background: rgba(244, 67, 54, 0.15);
+  color: #F44336;
+  border: 1.5px solid #F44336;
+}
+
+.cert-card.expired .cert-icon-wrapper img {
+  opacity: 0.75;
+  filter: grayscale(40%);
+}
+
 /* Contact Modal */
 .modal-overlay {
   position: fixed;
