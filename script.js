@@ -139,42 +139,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const directDownloadBtn = document.getElementById('directDownloadBtn');
   let downloadWidgetId = null;
 
-  // Render download CAPTCHA programmatically by extracting the sitekey Netlify generates for the contact form
+  // Poll the injected g-recaptcha-response textarea to enable the download button when solved
   const initDownloadRecaptcha = () => {
-    let attempts = 0;
-    const checkExist = setInterval(() => {
-      attempts++;
-      const contactRecaptcha = document.querySelector('#contactModal .g-recaptcha') || document.querySelector('#contactModal [data-netlify-recaptcha="true"]');
-      
-      if (typeof grecaptcha !== 'undefined' && contactRecaptcha && contactRecaptcha.getAttribute('data-sitekey')) {
-        clearInterval(checkExist);
-        const siteKey = contactRecaptcha.getAttribute('data-sitekey');
-        try {
-          downloadWidgetId = grecaptcha.render('download-recaptcha-container', {
-            'sitekey': siteKey,
-            'callback': function(response) {
-              if (directDownloadBtn) {
-                directDownloadBtn.classList.remove('disabled');
-                directDownloadBtn.removeAttribute('aria-disabled');
-              }
-            },
-            'expired-callback': function() {
-              if (directDownloadBtn) {
-                directDownloadBtn.classList.add('disabled');
-                directDownloadBtn.setAttribute('aria-disabled', 'true');
-              }
-            }
-          });
-        } catch (e) {
-          console.error("Failed to render download reCAPTCHA", e);
+    const downloadForm = document.querySelector('form[name="download-verification"]');
+    if (downloadForm) {
+      downloadForm.addEventListener('submit', (e) => e.preventDefault());
+    }
+
+    setInterval(() => {
+      const recaptchaResponse = document.querySelector('#downloadModal [name="g-recaptcha-response"]');
+      if (recaptchaResponse && recaptchaResponse.value) {
+        if (directDownloadBtn) {
+          directDownloadBtn.classList.remove('disabled');
+          directDownloadBtn.removeAttribute('aria-disabled');
+        }
+      } else {
+        if (directDownloadBtn) {
+          directDownloadBtn.classList.add('disabled');
+          directDownloadBtn.setAttribute('aria-disabled', 'true');
         }
       }
-      
-      if (attempts > 50) {
-        clearInterval(checkExist);
-        console.log("Download reCAPTCHA initialization timed out (expected on localhost/non-Netlify environments).");
-      }
-    }, 100);
+    }, 500);
   };
 
   if (downloadModal && closeDownloadModalBtn && heroDownloadBtn) {
@@ -182,11 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resetDownloadModalState = () => {
       downloadModal.classList.remove('active');
-      if (downloadWidgetId !== null && typeof grecaptcha !== 'undefined') {
+      if (typeof grecaptcha !== 'undefined') {
         try {
-          grecaptcha.reset(downloadWidgetId);
+          // Attempt to reset all widgets safely
+          for (let i = 0; i < 3; i++) {
+             grecaptcha.reset(i);
+          }
         } catch (e) {
-          console.warn("reCAPTCHA reset failed", e);
+          // ignore errors from invalid widget IDs
         }
       }
       if (directDownloadBtn) {

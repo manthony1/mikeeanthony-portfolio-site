@@ -581,13 +581,15 @@
       <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--charcoal);">
         Complete the verification challenge to enable download.
       </p>
-      <div class="download-container">
-        <div id="download-recaptcha-container" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"></div>
-        <a href="files/Resume_Public_Current.pdf" target="_blank" rel="noopener noreferrer" id="directDownloadBtn" class="btn btn-primary disabled" style="width: 100%; justify-content: center;" aria-disabled="true">
-          <span class="material-symbols-outlined">download</span>
-          Download Resume (PDF)
-        </a>
-      </div>
+      <form name="download-verification" method="POST" data-netlify="true" data-netlify-recaptcha="true" style="margin: 0; padding: 0;">
+        <div class="download-container">
+          <div data-netlify-recaptcha="true" id="download-recaptcha-container" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"></div>
+          <a href="files/Resume_Public_Current.pdf" target="_blank" rel="noopener noreferrer" id="directDownloadBtn" class="btn btn-primary disabled" style="width: 100%; justify-content: center;" aria-disabled="true">
+            <span class="material-symbols-outlined">download</span>
+            Download Resume (PDF)
+          </a>
+        </div>
+      </form>
     </div>
   </div>
 </body>
