@@ -105,7 +105,7 @@
       </div>
 
       <div class="hero-actions">
-        <button id="heroDownloadBtn" class="btn btn-primary">
+        <button id="heroDownloadBtn" class="btn btn-primary download-modal-trigger" data-file-url="files/Resume_Public_Current.pdf" data-file-name="Resume">
           <span class="material-symbols-outlined">download</span>
           Download Resume (PDF)
         </button>
@@ -165,7 +165,7 @@
                 timelines.</li>
             </ul>
           </div>
-          <a href="files/Performance-Audit-Simulation.pdf" target="_blank" rel="noopener noreferrer" class="media-attachment">
+          <a href="#" class="media-attachment download-modal-trigger" data-file-url="files/Performance-Audit-Simulation.pdf" data-file-name="Audit Report">
             <span class="material-symbols-outlined">folder_zip</span>
             Download Audit Report
           </a>
@@ -584,9 +584,9 @@
       <form name="download-verification" method="POST" data-netlify="true" data-netlify-recaptcha="true" style="margin: 0; padding: 0;">
         <div class="download-container">
           <div data-netlify-recaptcha="true" id="download-recaptcha-container" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"></div>
-          <a href="files/Resume_Public_Current.pdf" target="_blank" rel="noopener noreferrer" id="directDownloadBtn" class="btn btn-primary disabled" style="width: 100%; justify-content: center;" aria-disabled="true">
+          <a href="#" target="_blank" rel="noopener noreferrer" id="directDownloadBtn" class="btn btn-primary disabled" style="width: 100%; justify-content: center;" aria-disabled="true">
             <span class="material-symbols-outlined">download</span>
-            Download Resume (PDF)
+            <span id="downloadBtnText">Download File</span>
           </a>
         </div>
       </form>

@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Download Modal Logic
-  const heroDownloadBtn = document.getElementById('heroDownloadBtn');
+  const downloadTriggers = document.querySelectorAll('.download-modal-trigger');
   const downloadModal = document.getElementById('downloadModal');
   const closeDownloadModalBtn = document.getElementById('closeDownloadModalBtn');
   const directDownloadBtn = document.getElementById('directDownloadBtn');
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   };
 
-  if (downloadModal && closeDownloadModalBtn && heroDownloadBtn) {
+  if (downloadModal && closeDownloadModalBtn && downloadTriggers.length > 0) {
     initDownloadRecaptcha();
 
     const resetDownloadModalState = () => {
@@ -184,9 +184,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Open download modal
-    heroDownloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      downloadModal.classList.add('active');
+    downloadTriggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const fileUrl = btn.getAttribute('data-file-url');
+        const fileName = btn.getAttribute('data-file-name');
+        
+        if (directDownloadBtn && fileUrl) {
+          directDownloadBtn.href = fileUrl;
+          const btnText = document.getElementById('downloadBtnText');
+          if (btnText && fileName) {
+            btnText.textContent = `Download ${fileName} (PDF)`;
+          }
+        }
+        
+        downloadModal.classList.add('active');
+      });
     });
 
     // Close modal via button
